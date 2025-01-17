@@ -47,7 +47,7 @@ export function About() {
               <div className="flex flex-col md:flex-row gap-8 items-center">
                 <div className="w-48 h-48 rounded-full overflow-hidden flex-shrink-0">
                   <img 
-                    src="src/assets/images/krystian.webp"
+                    src="/images/krystian.webp"
                     alt="dr Krystian Rubajczyk"
                     className="w-full h-full object-cover"
                   />

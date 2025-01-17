@@ -57,7 +57,7 @@ export function About() {
           <div className="relative animate-slide-up delay-100">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl transform hover:scale-[1.02] transition-transform duration-300">
               <img 
-                src="/src/assets/images/tlo.webp"
+                src="/images/tlo.webp"
                 alt="Młodzi piłkarze podczas treningu"
                 className="w-full h-full object-cover"
               />

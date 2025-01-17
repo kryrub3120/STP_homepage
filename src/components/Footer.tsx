@@ -1,6 +1,22 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { Activity, Mail, Phone, MapPin, Twitter, Instagram, Youtube, ChevronRight } from 'lucide-react';
+import { 
+  Activity, 
+  Mail, 
+  Phone, 
+  MapPin, 
+  Twitter, 
+  Instagram, 
+  Youtube, 
+  ChevronRight,
+  BookOpen,
+  Users,
+  Target,
+  Brain,
+  FileText,
+  MessageCircle,
+  Shield
+} from 'lucide-react';
 
 export function Footer() {
   return (
@@ -47,17 +63,26 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Navigation Links */}
+          {/* Main Navigation */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Nawigacja</h3>
+            <h3 className="text-lg font-semibold mb-6">Odkryj więcej</h3>
             <ul className="space-y-4">
               <li>
                 <NavLink 
                   to="/products" 
                   className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
                 >
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <Target className="w-4 h-4 text-primary" />
                   Produkty i usługi
+                </NavLink>
+              </li>
+              <li>
+                <NavLink 
+                  to="/blog" 
+                  className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
+                >
+                  <BookOpen className="w-4 h-4 text-primary" />
+                  Blog i aktualności
                 </NavLink>
               </li>
               <li>
@@ -65,8 +90,8 @@ export function Footer() {
                   to="/team" 
                   className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
                 >
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  Zespół
+                  <Users className="w-4 h-4 text-primary" />
+                  Nasz zespół
                 </NavLink>
               </li>
               <li>
@@ -74,7 +99,7 @@ export function Footer() {
                   to="/about" 
                   className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
                 >
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <Brain className="w-4 h-4 text-primary" />
                   O nas
                 </NavLink>
               </li>
@@ -83,9 +108,61 @@ export function Footer() {
                   to="/funding" 
                   className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
                 >
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <FileText className="w-4 h-4 text-primary" />
                   Dofinansowania
                 </NavLink>
+              </li>
+            </ul>
+          </div>
+
+          {/* Additional Links */}
+          <div>
+            <h3 className="text-lg font-semibold mb-6">Wsparcie i media</h3>
+            <ul className="space-y-4">
+              <li>
+                <NavLink 
+                  to="/media" 
+                  className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
+                >
+                  <MessageCircle className="w-4 h-4 text-primary" />
+                  Dla mediów
+                </NavLink>
+              </li>
+              <li>
+                <NavLink 
+                  to="/demo" 
+                  className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
+                >
+                  <Target className="w-4 h-4 text-primary" />
+                  Zamów demo
+                </NavLink>
+              </li>
+              <li>
+                <Link 
+                  to="/privacy-policy" 
+                  className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
+                >
+                  <Shield className="w-4 h-4 text-primary" />
+                  Polityka prywatności
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/cookies" 
+                  className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
+                >
+                  <Shield className="w-4 h-4 text-primary" />
+                  Polityka cookies
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/terms" 
+                  className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
+                >
+                  <FileText className="w-4 h-4 text-primary" />
+                  Regulamin
+                </Link>
               </li>
             </ul>
           </div>
@@ -130,40 +207,6 @@ export function Footer() {
               </li>
             </ul>
           </div>
-
-          {/* Legal Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Informacje prawne</h3>
-            <ul className="space-y-4">
-              <li>
-                <Link 
-                  to="/privacy-policy" 
-                  className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
-                >
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  Polityka prywatności
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/cookies" 
-                  className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
-                >
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  Polityka cookies
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/terms" 
-                  className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
-                >
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  Regulamin
-                </Link>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
 
@@ -171,7 +214,7 @@ export function Footer() {
       <div className="border-t border-gray-700">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <p className="text-center text-gray-400 text-sm">
-            © 2025 potencjaldosportu.pl. Wszelkie prawa zastrzeżone.
+            © {new Date().getFullYear()} potencjaldosportu.pl. Wszelkie prawa zastrzeżone.
           </p>
         </div>
       </div>

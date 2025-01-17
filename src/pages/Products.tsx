@@ -14,8 +14,12 @@ import {
   Briefcase,
   BarChart3,
   ClipboardCheck,
-  Mail
+  Mail,
+  ChevronRight,
+  Settings,
+  Code
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function Products() {
   return (
@@ -67,6 +71,16 @@ export function Products() {
                       </div>
                     </div>
                   </div>
+                  <div className="mt-8">
+                    <Link 
+                      to="/products/soccer-talent-predictor" 
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg
+                               hover:bg-primary/90 transition-all duration-300 group"
+                    >
+                      <span>Dowiedz się więcej</span>
+                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
                 </div>
                 <div 
                   className="md:w-1/2 h-[400px] bg-cover bg-center"
@@ -80,7 +94,7 @@ export function Products() {
         </div>
       </div>
 
-      {/* Athlete Talent Scout Section */}
+      {/* AI Consulting Section */}
       <div className="py-16 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
@@ -88,37 +102,45 @@ export function Products() {
               <div className="md:flex flex-row-reverse">
                 <div className="md:w-1/2 p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <Target className="w-8 h-8 text-primary" />
-                    <h2 className="text-2xl font-bold text-text">Athlete Talent Scout</h2>
-                  </div>
-                  <div className="inline-block bg-primary/10 text-primary text-sm font-semibold px-3 py-1 rounded-full mb-4">
-                    Nowy Projekt
+                    <Brain className="w-8 h-8 text-primary" />
+                    <h2 className="text-2xl font-bold text-text">Konsulting AI</h2>
                   </div>
                   <p className="text-muted mb-6 leading-relaxed">
-                    Innowacyjna platforma wykorzystująca zaawansowane algorytmy do dopasowywania 
-                    młodych sportowców do dyscyplin sportowych na podstawie ich unikalnych predyspozycji.
+                    Profesjonalne doradztwo w zakresie wdrażania rozwiązań opartych na sztucznej 
+                    inteligencji w sporcie. Pomagamy organizacjom sportowym w transformacji cyfrowej 
+                    i optymalizacji procesów poprzez wykorzystanie AI.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="flex items-start gap-3">
-                      <Dumbbell className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                      <Settings className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                       <div>
-                        <h3 className="font-semibold text-text mb-2">Analiza Predyspozycji</h3>
-                        <p className="text-sm text-muted">Kompleksowa ocena zdolności</p>
+                        <h3 className="font-semibold text-text mb-2">Optymalizacja Procesów</h3>
+                        <p className="text-sm text-muted">Usprawnienie działań organizacji</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <Microscope className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                      <Code className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                       <div>
-                        <h3 className="font-semibold text-text mb-2">Badania Biometryczne</h3>
-                        <p className="text-sm text-muted">Szczegółowa analiza parametrów</p>
+                        <h3 className="font-semibold text-text mb-2">Wdrożenia AI</h3>
+                        <p className="text-sm text-muted">Implementacja rozwiązań AI</p>
                       </div>
                     </div>
+                  </div>
+                  <div className="mt-8">
+                    <Link 
+                      to="/products/consulting-ai" 
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg
+                               hover:bg-primary/90 transition-all duration-300 group"
+                    >
+                      <span>Dowiedz się więcej</span>
+                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                   </div>
                 </div>
                 <div 
                   className="md:w-1/2 h-[400px] bg-cover bg-center"
                   style={{
-                    backgroundImage: 'url("https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80")'
+                    backgroundImage: 'url("https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80")'
                   }}
                 ></div>
               </div>
@@ -127,7 +149,7 @@ export function Products() {
         </div>
       </div>
 
-      {/* New Section: Optymalizacja procesu rekrutacji talentów */}
+      {/* Recruitment Optimization Section */}
       <div className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
@@ -140,24 +162,34 @@ export function Products() {
                   </div>
                   <p className="text-muted mb-6 leading-relaxed">
                     Doradztwo dla klubów w zakresie skuteczniejszego rekrutowania młodych zawodników 
-                    na podstawie danych i predykcji. Wsparcie w procesach skautingowych z wykorzystaniem 
-                    nowoczesnych technologii.
+                    na podstawie danych i predykcji. Wspieramy proces identyfikacji i selekcji talentów 
+                    poprzez zaawansowaną analitykę.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="flex items-start gap-3">
-                      <BarChart3 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                      <Target className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                       <div>
-                        <h3 className="font-semibold text-text mb-2">Automatyzacja Procesu</h3>
-                        <p className="text-sm text-muted">Zautomatyzowane narzędzia do selekcji talentów</p>
+                        <h3 className="font-semibold text-text mb-2">Precyzyjna Selekcja</h3>
+                        <p className="text-sm text-muted">Skuteczna identyfikacja talentów</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <ClipboardCheck className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                      <BarChart3 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                       <div>
-                        <h3 className="font-semibold text-text mb-2">Standaryzacja Oceny</h3>
-                        <p className="text-sm text-muted">Obiektywne kryteria oceny zawodników</p>
+                        <h3 className="font-semibold text-text mb-2">Analiza Danych</h3>
+                        <p className="text-sm text-muted">Zaawansowana analityka sportowa</p>
                       </div>
                     </div>
+                  </div>
+                  <div className="mt-8">
+                    <Link 
+                      to="/products/recruitment-optimization" 
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg
+                               hover:bg-primary/90 transition-all duration-300 group"
+                    >
+                      <span>Dowiedz się więcej</span>
+                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                   </div>
                 </div>
                 <div 
@@ -179,13 +211,16 @@ export function Products() {
             <h2 className="text-2xl font-bold text-text mb-6">
               Zainteresowany naszymi rozwiązaniami?
             </h2>
-            <button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-text rounded-lg hover:bg-opacity-80 transition-all duration-300"
+            <Link 
+              to="/demo"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-lg
+                       hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105
+                       shadow-lg hover:shadow-primary/20 group"
             >
               <Mail className="w-5 h-5" />
-              Skontaktuj się z nami
-            </button>
+              <span className="font-semibold">Zamów demo</span>
+              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </div>
       </div>

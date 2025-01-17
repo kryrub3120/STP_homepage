@@ -46,13 +46,15 @@ export function Navbar() {
             <CustomNavLink to="/team">Zespół</CustomNavLink>
             <CustomNavLink to="/about">O nas</CustomNavLink>
             <CustomNavLink to="/funding">Dofinansowania</CustomNavLink>
+            <CustomNavLink to="/blog">Blog</CustomNavLink>
+            <CustomNavLink to="/media">Dla mediów</CustomNavLink>
             <Link 
               to="/demo"
               className="ml-2 px-6 h-12 flex items-center justify-center bg-primary text-white rounded-lg
                        hover:bg-primary/90 transition-all duration-300 transform hover:scale-105
-                       safe-touch-target"
+                       shadow-lg hover:shadow-primary/20 group"
             >
-              Zamów DEMO
+              <span className="font-semibold">Bezpłatne DEMO</span>
             </Link>
           </div>
 
@@ -80,13 +82,15 @@ export function Navbar() {
             <CustomNavLink to="/team" onClick={closeMenu}>Zespół</CustomNavLink>
             <CustomNavLink to="/about" onClick={closeMenu}>O nas</CustomNavLink>
             <CustomNavLink to="/funding" onClick={closeMenu}>Dofinansowania</CustomNavLink>
+            <CustomNavLink to="/blog" onClick={closeMenu}>Blog</CustomNavLink>
+            <CustomNavLink to="/media" onClick={closeMenu}>Dla mediów</CustomNavLink>
             <Link 
               to="/demo"
               onClick={closeMenu}
               className="mt-4 w-full h-12 flex items-center justify-center bg-primary text-white rounded-lg
                        hover:bg-primary/90 transition-all duration-300 safe-touch-target"
             >
-              Zamów DEMO
+              Bezpłatne DEMO
             </Link>
           </div>
         </div>

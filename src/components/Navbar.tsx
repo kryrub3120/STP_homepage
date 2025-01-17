@@ -46,7 +46,6 @@ export function Navbar() {
             <CustomNavLink to="/team">Zespół</CustomNavLink>
             <CustomNavLink to="/about">O nas</CustomNavLink>
             <CustomNavLink to="/funding">Dofinansowania</CustomNavLink>
-            <CustomNavLink to="/blog">Blog</CustomNavLink>
             <CustomNavLink to="/media">Dla mediów</CustomNavLink>
             <Link 
               to="/demo"
@@ -82,7 +81,6 @@ export function Navbar() {
             <CustomNavLink to="/team" onClick={closeMenu}>Zespół</CustomNavLink>
             <CustomNavLink to="/about" onClick={closeMenu}>O nas</CustomNavLink>
             <CustomNavLink to="/funding" onClick={closeMenu}>Dofinansowania</CustomNavLink>
-            <CustomNavLink to="/blog" onClick={closeMenu}>Blog</CustomNavLink>
             <CustomNavLink to="/media" onClick={closeMenu}>Dla mediów</CustomNavLink>
             <Link 
               to="/demo"

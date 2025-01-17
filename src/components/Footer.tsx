@@ -5,11 +5,8 @@ import {
   Mail, 
   Phone, 
   MapPin, 
-  Twitter, 
-  Instagram, 
-  Youtube, 
   ChevronRight,
-  BookOpen,
+  Linkedin,
   Users,
   Target,
   Brain,
@@ -34,31 +31,24 @@ export function Footer() {
             </p>
             <div className="flex gap-4">
               <a 
-                href="https://twitter.com/potencjaldosportu" 
+                href="https://x.com/K_Rubajczyk" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-primary transition-all duration-300 transform hover:scale-110"
-                aria-label="Twitter"
+                aria-label="X (Twitter)"
               >
-                <Twitter className="w-5 h-5" />
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
               </a>
               <a 
-                href="https://instagram.com/potencjaldosportu" 
+                href="https://www.linkedin.com/in/krystian-rubajczyk-259650b2/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-primary transition-all duration-300 transform hover:scale-110"
-                aria-label="Instagram"
+                aria-label="LinkedIn"
               >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a 
-                href="https://youtube.com/@potencjaldosportu" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-primary transition-all duration-300 transform hover:scale-110"
-                aria-label="YouTube"
-              >
-                <Youtube className="w-5 h-5" />
+                <Linkedin className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -74,15 +64,6 @@ export function Footer() {
                 >
                   <Target className="w-4 h-4 text-primary" />
                   Produkty i usługi
-                </NavLink>
-              </li>
-              <li>
-                <NavLink 
-                  to="/blog" 
-                  className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
-                >
-                  <BookOpen className="w-4 h-4 text-primary" />
-                  Blog i aktualności
                 </NavLink>
               </li>
               <li>

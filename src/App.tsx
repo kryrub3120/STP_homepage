@@ -24,8 +24,6 @@ const RecruitmentOptimization = React.lazy(() => import('./pages/RecruitmentOpti
 const PrivacyPolicy = React.lazy(() => import('./pages/PrivacyPolicy').then(module => ({ default: module.PrivacyPolicy })));
 const CookiesPolicy = React.lazy(() => import('./pages/CookiesPolicy').then(module => ({ default: module.CookiesPolicy })));
 const Terms = React.lazy(() => import('./pages/Terms').then(module => ({ default: module.Terms })));
-const Blog = React.lazy(() => import('./pages/Blog').then(module => ({ default: module.Blog })));
-const BlogPost = React.lazy(() => import('./pages/BlogPost').then(module => ({ default: module.BlogPost })));
 const Media = React.lazy(() => import('./pages/Media').then(module => ({ default: module.Media })));
 
 export default function App() {
@@ -47,8 +45,6 @@ export default function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/cookies" element={<CookiesPolicy />} />
             <Route path="/terms" element={<Terms />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/media" element={<Media />} />
           </Routes>
         </Suspense>

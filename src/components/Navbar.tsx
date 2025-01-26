@@ -10,8 +10,8 @@ interface NavLinkProps {
 
 function CustomNavLink({ to, children, onClick }: NavLinkProps) {
   return (
-    <NavLink 
-      to={to} 
+    <NavLink
+      to={to}
       onClick={onClick}
       className={({ isActive }) => `
         text-white hover:text-primary transition-all duration-300
@@ -50,31 +50,19 @@ export function Navbar() {
 
   const closeMenu = () => setIsMenuOpen(false);
 
-  useEffect(() => {
-    const handleLinkClick = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      if (target.tagName === 'A' || target.closest('a')) {
-        closeMenu();
-      }
-    };
-
-    document.addEventListener('click', handleLinkClick);
-    return () => document.removeEventListener('click', handleLinkClick);
-  }, []);
-
   return (
-    <nav 
+    <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled || isMenuOpen 
-          ? 'bg-background/95 backdrop-blur-md shadow-lg py-2' 
+        isScrolled || isMenuOpen
+          ? 'bg-background/95 backdrop-blur-md shadow-lg py-2'
           : 'bg-transparent py-4'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <NavLink 
-            to="/" 
+          <NavLink
+            to="/"
             className="flex items-center gap-3"
             onClick={closeMenu}
           >
@@ -92,7 +80,7 @@ export function Navbar() {
             <CustomNavLink to="/o-nas">O nas</CustomNavLink>
             <CustomNavLink to="/finansowanie">Dofinansowania</CustomNavLink>
             <CustomNavLink to="/media">Dla mediów</CustomNavLink>
-            <Link 
+            <Link
               to="/demo"
               className="px-6 h-10 flex items-center justify-center bg-primary text-white rounded-lg
                        hover:bg-primary/90 transition-transform hover:scale-105
@@ -103,7 +91,7 @@ export function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="lg:hidden text-white hover:text-primary transition-colors p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? 'Zamknij menu' : 'Otwórz menu'}
@@ -114,17 +102,29 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div 
-            className="lg:hidden fixed inset-0 bg-background/90 backdrop-blur-md z-40 flex flex-col items-center justify-center"
+          <div
+            className="lg:hidden fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center overflow-y-auto min-h-screen"
           >
             <div className="flex flex-col gap-6 text-center p-6">
-              <CustomNavLink to="/" onClick={closeMenu}>Strona główna</CustomNavLink>
-              <CustomNavLink to="/produkty" onClick={closeMenu}>Produkty i usługi</CustomNavLink>
-              <CustomNavLink to="/zespol" onClick={closeMenu}>Zespół</CustomNavLink>
-              <CustomNavLink to="/o-nas" onClick={closeMenu}>O nas</CustomNavLink>
-              <CustomNavLink to="/finansowanie" onClick={closeMenu}>Dofinansowania</CustomNavLink>
-              <CustomNavLink to="/media" onClick={closeMenu}>Dla mediów</CustomNavLink>
-              <Link 
+              <CustomNavLink to="/" onClick={closeMenu}>
+                Strona główna
+              </CustomNavLink>
+              <CustomNavLink to="/produkty" onClick={closeMenu}>
+                Produkty i usługi
+              </CustomNavLink>
+              <CustomNavLink to="/zespol" onClick={closeMenu}>
+                Zespół
+              </CustomNavLink>
+              <CustomNavLink to="/o-nas" onClick={closeMenu}>
+                O nas
+              </CustomNavLink>
+              <CustomNavLink to="/finansowanie" onClick={closeMenu}>
+                Dofinansowania
+              </CustomNavLink>
+              <CustomNavLink to="/media" onClick={closeMenu}>
+                Dla mediów
+              </CustomNavLink>
+              <Link
                 to="/demo"
                 onClick={closeMenu}
                 className="w-full h-12 flex items-center justify-center bg-primary text-white rounded-lg

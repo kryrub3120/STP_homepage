@@ -2,6 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Cookie } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+declare global {
+  interface Window {
+    GA_INITIALIZED?: boolean;
+    dataLayer: unknown[];
+  }
+}
+
 export function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -34,11 +41,11 @@ export function CookieConsent() {
       document.head.appendChild(script);
 
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        window.dataLayer.push(arguments);
+      function gtag(...args: (string | Date | object)[]) {
+        window.dataLayer.push(args);
       }
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', 'G-XXXXXXXXXX', { page_path: window.location.pathname });
       window.GA_INITIALIZED = true;
     }
   };
@@ -53,7 +60,7 @@ export function CookieConsent() {
             <Cookie className="w-5 h-5 text-primary flex-shrink-0" />
             <p className="text-text text-sm">
               Nasza strona używa plików cookies w celu poprawy funkcjonalności i doświadczenia użytkownika.{' '}
-              <Link to="/cookies" className="text-primary hover:text-primary/80 transition-colors">
+              <Link to="/ciasteczka" className="text-primary hover:text-primary/80 transition-colors">
                 Dowiedz się więcej
               </Link>
             </p>

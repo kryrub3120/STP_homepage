@@ -37,8 +37,6 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const closeMenu = () => setIsMenuOpen(false);
-
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
@@ -49,6 +47,8 @@ export function Navbar() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <nav 
@@ -75,10 +75,10 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-4">
             <CustomNavLink to="/">Strona główna</CustomNavLink>
-            <CustomNavLink to="/products">Produkty i usługi</CustomNavLink>
-            <CustomNavLink to="/team">Zespół</CustomNavLink>
-            <CustomNavLink to="/about">O nas</CustomNavLink>
-            <CustomNavLink to="/funding">Dofinansowania</CustomNavLink>
+            <CustomNavLink to="/produkty">Produkty i usługi</CustomNavLink>
+            <CustomNavLink to="/zespol">Zespół</CustomNavLink>
+            <CustomNavLink to="/o-nas">O nas</CustomNavLink>
+            <CustomNavLink to="/finansowanie">Dofinansowania</CustomNavLink>
             <CustomNavLink to="/media">Dla mediów</CustomNavLink>
             <Link 
               to="/demo"
@@ -100,24 +100,17 @@ export function Navbar() {
           </button>
         </div>
 
-        {/* Mobile/Tablet Navigation Overlay */}
-        <div 
-          className={`lg:hidden fixed inset-0 bg-background/90 backdrop-blur-md transition-all duration-300 z-40
-            ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
-          onClick={closeMenu}
-        >
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
           <div 
-            className={`absolute top-20 left-0 right-0 bg-background border-t border-white/10 p-6
-              transition-transform duration-300 transform
-              ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}
-            onClick={e => e.stopPropagation()}
+            className="lg:hidden fixed inset-0 bg-background/90 backdrop-blur-md z-40 flex flex-col items-center justify-center"
           >
-            <div className="grid gap-4">
+            <div className="flex flex-col gap-6 text-center p-6">
               <CustomNavLink to="/" onClick={closeMenu}>Strona główna</CustomNavLink>
-              <CustomNavLink to="/products" onClick={closeMenu}>Produkty i usługi</CustomNavLink>
-              <CustomNavLink to="/team" onClick={closeMenu}>Zespół</CustomNavLink>
-              <CustomNavLink to="/about" onClick={closeMenu}>O nas</CustomNavLink>
-              <CustomNavLink to="/funding" onClick={closeMenu}>Dofinansowania</CustomNavLink>
+              <CustomNavLink to="/produkty" onClick={closeMenu}>Produkty i usługi</CustomNavLink>
+              <CustomNavLink to="/zespol" onClick={closeMenu}>Zespół</CustomNavLink>
+              <CustomNavLink to="/o-nas" onClick={closeMenu}>O nas</CustomNavLink>
+              <CustomNavLink to="/finansowanie" onClick={closeMenu}>Dofinansowania</CustomNavLink>
               <CustomNavLink to="/media" onClick={closeMenu}>Dla mediów</CustomNavLink>
               <Link 
                 to="/demo"
@@ -129,7 +122,7 @@ export function Navbar() {
               </Link>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </nav>
   );

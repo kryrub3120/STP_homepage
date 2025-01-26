@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { CookieConsent } from './components/CookieConsent';
+import ScrollToTop from './components/ScrollToTop';
 
 // Lazy load pages
 const Home = React.lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
@@ -33,8 +34,9 @@ export default function App() {
 
   useEffect(() => {
     // Track page views on route change
-    if (window.gtag) {
-      window.gtag('event', 'page_view', {
+    const gtag = window.gtag;
+    if (typeof gtag === 'function') {
+      gtag('event', 'page_view', {
         page_title: document.title,
         page_location: window.location.href,
         page_path: location.pathname,
@@ -48,19 +50,20 @@ export default function App() {
       <Navbar />
       <main className="flex-grow">
         <React.Suspense fallback={<PageLoader />}>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/products/soccer-talent-predictor" element={<SoccerTalentPredictor />} />
-            <Route path="/products/consulting-ai" element={<ConsultingAI />} />
-            <Route path="/products/recruitment-optimization" element={<RecruitmentOptimization />} />
-            <Route path="/team" element={<Team />} />
-            <Route path="/funding" element={<Funding />} />
+            <Route path="/o-nas" element={<About />} />
+            <Route path="/produkty" element={<Products />} />
+            <Route path="/produkty/predyktor-talentu-pilkarskiego" element={<SoccerTalentPredictor />} />
+            <Route path="/produkty/doradztwo-ai" element={<ConsultingAI />} />
+            <Route path="/produkty/optymalizacja-rekrutacji" element={<RecruitmentOptimization />} />
+            <Route path="/zespol" element={<Team />} />
+            <Route path="/finansowanie" element={<Funding />} />
             <Route path="/demo" element={<Demo />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/cookies" element={<CookiesPolicy />} />
-            <Route path="/terms" element={<Terms />} />
+            <Route path="/polityka-prywatnosci" element={<PrivacyPolicy />} />
+            <Route path="/ciasteczka" element={<CookiesPolicy />} />
+            <Route path="/warunki" element={<Terms />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/media" element={<Media />} />
@@ -68,7 +71,7 @@ export default function App() {
         </React.Suspense>
       </main>
       <Footer />
-      <CookieConsent />
+       <CookieConsent />
     </div>
   );
 }

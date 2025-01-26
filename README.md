@@ -1,4 +1,4 @@
-# Sportpredictor - Dokumentacja v0.1
+# Sportpredictor - Dokumentacja v1.0.1
 
 ## 🚀 O Projekcie
 
@@ -127,7 +127,21 @@ Breakpointy:
 2. Zbuduj projekt: `npm run build`
 3. Wdróż zawartość katalogu `dist`
 
-## 📈 Planowane Funkcjonalności (v0.2)
+## 🆕 Nowe Funkcjonalności (v1.0.1)
+
+- Komponent CookieConsent dla zgodności z GDPR
+- Nowa strona Demo dla potencjalnych klientów
+- Rozszerzony komponent AthleteDevelopment
+- Ulepszony komponent Products z nowymi funkcjonalnościami
+- Zoptymalizowany komponent ScrollToTop dla lepszej nawigacji
+- Odświeżony wygląd strony About
+- Ulepszenia w komponencie Hero dla lepszego pierwszego wrażenia
+- Zmodyfikowany Navbar dla lepszej użyteczności
+- Zaktualizowany Footer z nowymi linkami i informacjami
+- Drobne poprawki w typach globalnych dla lepszej spójności TypeScript
+- Optymalizacje wydajności w różnych komponentach
+
+## 📈 Planowane Funkcjonalności (v1.1)
 
 - [ ] System autentykacji użytkowników
 - [ ] Panel administracyjny
@@ -156,4 +170,4 @@ Breakpointy:
 
 ## 📄 Licencja
 
-Wszelkie prawa zastrzeżone © 2024 Sportpredictor
+Wszelkie prawa zastrzeżone © 2025 Sportpredictor

@@ -67,7 +67,7 @@ export function Products() {
                   </div>
                   <div className="mt-8">
                     <Link 
-                      to="/products/soccer-talent-predictor" 
+                      to="/produkty/predyktor-talentu-pilkarskiego"
                       className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg
                                hover:bg-primary/90 transition-all duration-300 group"
                     >
@@ -122,7 +122,7 @@ export function Products() {
                   </div>
                   <div className="mt-8">
                     <Link 
-                      to="/products/consulting-ai" 
+                      to="/produkty/doradztwo-ai"
                       className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg
                                hover:bg-primary/90 transition-all duration-300 group"
                     >
@@ -177,7 +177,7 @@ export function Products() {
                   </div>
                   <div className="mt-8">
                     <Link 
-                      to="/products/recruitment-optimization" 
+                      to="/produkty/optymalizacja-rekrutacji"
                       className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg
                                hover:bg-primary/90 transition-all duration-300 group"
                     >

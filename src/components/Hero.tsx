@@ -75,7 +75,7 @@ export function Hero() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 animate-slide-up delay-400">
             <Link
-              to="/products"
+              to="/produkty"
               className="flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white 
                        rounded-lg hover:bg-opacity-90 transition-all duration-300 transform 
                        hover:scale-105 shadow-lg hover:shadow-primary/20 group"

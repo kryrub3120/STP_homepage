@@ -76,8 +76,8 @@ export function AthleteDevelopment() {
 
         {/* Enhanced CTA Button */}
         <div className="text-center animate-fade-in">
-          <Link 
-            to="/products" 
+                    <Link
+            to="/produkty"
             className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-lg
                      hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 
                      shadow-lg hover:shadow-primary/20 group"

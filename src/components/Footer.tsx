@@ -8,7 +8,6 @@ import {
   Twitter, 
   Instagram, 
   Youtube, 
-  ChevronRight,
   BookOpen,
   Users,
   Target,
@@ -69,7 +68,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li>
                 <NavLink 
-                  to="/products" 
+                  to="/produkty" 
                   className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
                 >
                   <Target className="w-4 h-4 text-primary" />
@@ -87,7 +86,7 @@ export function Footer() {
               </li>
               <li>
                 <NavLink 
-                  to="/team" 
+                  to="/zespol" 
                   className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
                 >
                   <Users className="w-4 h-4 text-primary" />
@@ -96,7 +95,7 @@ export function Footer() {
               </li>
               <li>
                 <NavLink 
-                  to="/about" 
+                  to="/o-nas" 
                   className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
                 >
                   <Brain className="w-4 h-4 text-primary" />
@@ -105,7 +104,7 @@ export function Footer() {
               </li>
               <li>
                 <NavLink 
-                  to="/funding" 
+                  to="/finansowanie" 
                   className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
                 >
                   <FileText className="w-4 h-4 text-primary" />
@@ -139,7 +138,7 @@ export function Footer() {
               </li>
               <li>
                 <Link 
-                  to="/privacy-policy" 
+                  to="/polityka-prywatnosci" 
                   className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
                 >
                   <Shield className="w-4 h-4 text-primary" />
@@ -148,7 +147,7 @@ export function Footer() {
               </li>
               <li>
                 <Link 
-                  to="/cookies" 
+                  to="/ciasteczka" 
                   className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
                 >
                   <Shield className="w-4 h-4 text-primary" />
@@ -157,7 +156,7 @@ export function Footer() {
               </li>
               <li>
                 <Link 
-                  to="/terms" 
+                  to="/warunki" 
                   className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
                 >
                   <FileText className="w-4 h-4 text-primary" />

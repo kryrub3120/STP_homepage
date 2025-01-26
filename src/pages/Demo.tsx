@@ -69,16 +69,18 @@ export function Demo() {
               {/* Phone Contact */}
               <a
                 href="tel:+48697319807"
-                className="group bg-card p-8 rounded-2xl hover:shadow-xl transition-all duration-300 
-                         transform hover:-translate-y-1 text-center"
+                className="group bg-card p-4 sm:p-6 md:p-8 rounded-2xl hover:shadow-xl transition-all duration-300 
+                         transform hover:-translate-y-1 text-center flex flex-col justify-between h-full"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6
-                              group-hover:scale-110 transition-transform">
-                  <Phone className="w-8 h-8 text-primary" />
+                <div>
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4 sm:mb-6
+                                group-hover:scale-110 transition-transform">
+                    <Phone className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-text mb-2 sm:mb-4">Zadzwoń do nas</h3>
+                  <p className="text-sm sm:text-base text-muted mb-4 sm:mb-6">Porozmawiaj z naszym ekspertem</p>
                 </div>
-                <h3 className="text-xl font-bold text-text mb-4">Zadzwoń do nas</h3>
-                <p className="text-muted mb-6">Porozmawiaj z naszym ekspertem</p>
-                <p className="text-primary font-semibold group-hover:scale-105 transition-transform">
+                <p className="text-primary font-semibold group-hover:scale-105 transition-transform text-sm sm:text-base">
                   +48 697 319 807
                 </p>
               </a>
@@ -86,16 +88,18 @@ export function Demo() {
               {/* Email Contact */}
               <a
                 href="mailto:biuro@potencjaldosportu.pl"
-                className="group bg-card p-8 rounded-2xl hover:shadow-xl transition-all duration-300 
-                         transform hover:-translate-y-1 text-center"
+                className="group bg-card p-4 sm:p-6 md:p-8 rounded-2xl hover:shadow-xl transition-all duration-300 
+                         transform hover:-translate-y-1 text-center flex flex-col justify-between h-full"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6
-                              group-hover:scale-110 transition-transform">
-                  <Mail className="w-8 h-8 text-primary" />
+                <div>
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4 sm:mb-6
+                                group-hover:scale-110 transition-transform">
+                    <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-text mb-2 sm:mb-4">Napisz do nas</h3>
+                  <p className="text-sm sm:text-base text-muted mb-4 sm:mb-6">Wyślij wiadomość e-mail</p>
                 </div>
-                <h3 className="text-xl font-bold text-text mb-4">Napisz do nas</h3>
-                <p className="text-muted mb-6">Wyślij wiadomość e-mail</p>
-                <p className="text-primary font-semibold group-hover:scale-105 transition-transform">
+                <p className="text-primary font-semibold group-hover:scale-105 transition-transform text-sm sm:text-base break-words">
                   biuro@potencjaldosportu.pl
                 </p>
               </a>
@@ -105,16 +109,18 @@ export function Demo() {
                 href="https://wa.me/48697319807"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-card p-8 rounded-2xl hover:shadow-xl transition-all duration-300 
-                         transform hover:-translate-y-1 text-center"
+                className="group bg-card p-4 sm:p-6 md:p-8 rounded-2xl hover:shadow-xl transition-all duration-300 
+                         transform hover:-translate-y-1 text-center flex flex-col justify-between h-full"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6
-                              group-hover:scale-110 transition-transform">
-                  <MessageCircle className="w-8 h-8 text-primary" />
+                <div>
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4 sm:mb-6
+                                group-hover:scale-110 transition-transform">
+                    <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-text mb-2 sm:mb-4">WhatsApp</h3>
+                  <p className="text-sm sm:text-base text-muted mb-4 sm:mb-6">Napisz na WhatsApp</p>
                 </div>
-                <h3 className="text-xl font-bold text-text mb-4">WhatsApp</h3>
-                <p className="text-muted mb-6">Napisz na WhatsApp</p>
-                <p className="text-primary font-semibold group-hover:scale-105 transition-transform">
+                <p className="text-primary font-semibold group-hover:scale-105 transition-transform text-sm sm:text-base">
                   Kliknij, aby otworzyć czat
                 </p>
               </a>

@@ -63,7 +63,7 @@ export function Products() {
                   </div>
                 </div>
                 <Link 
-                  to="/produkty" 
+                  to="/produkty/predyktor-talentu-pilkarskiego" 
                   className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg
                            hover:bg-primary/90 transition-all duration-300 group"
                 >
@@ -88,10 +88,10 @@ export function Products() {
                 na podstawie ich predyspozycji.
               </p>
               <Link 
-                to="/produkty" 
+                to="/demo" 
                 className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm"
               >
-                <span>Szczegóły</span>
+                <span>Umów konsultację</span>
                 <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
@@ -108,10 +108,10 @@ export function Products() {
                 sztucznej inteligencji w sporcie.
               </p>
               <Link 
-                to="/produkty" 
+                to="/produkty/doradztwo-ai" 
                 className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm"
               >
-                <span>Szczegóły</span>
+                <span>Umów konsultację</span>
                 <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
@@ -128,10 +128,10 @@ export function Products() {
                 na podstawie danych i predykcji.
               </p>
               <Link 
-                to="/produkty" 
+                to="/produkty/optymalizacja-rekrutacji" 
                 className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm"
               >
-                <span>Szczegóły</span>
+                <span>Umów konsultację</span>
                 <ChevronRight className="w-4 h-4" />
               </Link>
             </div>

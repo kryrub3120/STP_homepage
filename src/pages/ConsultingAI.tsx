@@ -6,12 +6,10 @@ import {
   Settings, 
   ChevronRight, 
   Users, 
-  LineChart,
   Lightbulb,
   Mail,
   ArrowRight,
   CheckCircle,
-  Gauge,
   Code,
   Workflow
 } from 'lucide-react';
@@ -53,7 +51,7 @@ export function ConsultingAI() {
 
             <div className="flex flex-col sm:flex-row gap-6 animate-slide-up delay-300">
               <Link
-                to="/contact"
+                to="/demo"
                 className="flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white 
                          rounded-lg hover:bg-opacity-90 transition-all duration-300 transform 
                          hover:scale-105 shadow-lg hover:shadow-primary/20 group"
@@ -254,7 +252,7 @@ export function ConsultingAI() {
               Skontaktuj się z nami, aby omówić możliwości współpracy i uzyskać więcej informacji.
             </p>
             <Link
-              to="/contact"
+              to="/demo"
               className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-lg
                        hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105
                        shadow-lg hover:shadow-primary/20 group"

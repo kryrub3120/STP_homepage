@@ -45,14 +45,15 @@ export function About() {
             </div>
             <div className="bg-background rounded-xl p-8 shadow-md">
               <div className="flex flex-col md:flex-row gap-8 items-center">
-                <div className="w-48 h-48 rounded-full overflow-hidden flex-shrink-0">
+                <div className="w-32 h-32 sm:w-48 sm:h-48 rounded-full overflow-hidden flex-shrink-0">
                   <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80" 
+                    src="/images/krystian.webp" 
                     alt="dr Krystian Rubajczyk"
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
-                <div>
+                <div className="text-center md:text-left">
                   <h3 className="text-xl font-semibold text-text mb-2">dr Krystian Rubajczyk</h3>
                   <p className="text-muted leading-relaxed">
                     Doktor nauk o kulturze fizycznej, trener UEFA A, ekspert w identyfikacji talentów

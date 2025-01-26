@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { 
   Calendar, 
   User, 
@@ -77,13 +77,13 @@ const BLOG_POST: BlogPost = {
     danych i analiz.`
   },
   date: '2024-03-15',
-  image: 'https://images.unsplash.com/photo-1560525821-d5615ef80c69?auto=format&fit=crop&q=80',
+  image: '/images/ezgif-1-3969b59b.webp',
   category: 'Technologia',
   author: {
     id: '1',
     name: 'dr Krystian Rubajczyk',
     role: 'Główny Analityk Sportowy',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80'
+    avatar: '/images/krystian.webp'
   },
   readingTime: '5 min'
 };
@@ -95,7 +95,7 @@ const RELATED_POSTS = [
     title: 'Machine Learning w sporcie',
     description: 'Jak uczenie maszynowe pomaga w analizie potencjału sportowego?',
     date: '2024-03-05',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80',
+    image: '/images/ezgif-1-3969b59b.webp',
     category: 'Technologia'
   },
   {
@@ -103,7 +103,7 @@ const RELATED_POSTS = [
     title: 'Predykcja sukcesu sportowego',
     description: 'Analiza najnowszych badań dotyczących przewidywania potencjału sportowego.',
     date: '2024-03-12',
-    image: 'https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80',
+    image: '/images/photo-1551958219-acbc608c6377.webp',
     category: 'Badania'
   },
   {
@@ -111,13 +111,13 @@ const RELATED_POSTS = [
     title: 'Wywiad z trenerem reprezentacji',
     description: 'Rozmowa o wykorzystaniu nowoczesnych technologii w procesie selekcji.',
     date: '2024-03-10',
-    image: 'https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&q=80',
+    image: '/images/ezgif-1-3969b59b.webp',
     category: 'Wywiady'
   }
 ];
 
 export function BlogPost() {
-  const { id } = useParams();
+  // const { id: postId } = useParams(); // Uncomment when implementing dynamic post fetching
   const post = BLOG_POST; // In real app, fetch post by id
 
   const formatDate = (dateString: string) => {

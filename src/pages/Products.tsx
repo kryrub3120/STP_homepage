@@ -6,14 +6,8 @@ import {
   Brain, 
   TrendingUp, 
   FileSpreadsheet,
-  Users,
   Search,
-  Dumbbell,
-  Microscope,
-  Gauge,
-  Briefcase,
   BarChart3,
-  ClipboardCheck,
   Mail,
   ChevronRight,
   Settings,
@@ -85,7 +79,7 @@ export function Products() {
                 <div 
                   className="md:w-1/2 h-[400px] bg-cover bg-center"
                   style={{
-                    backgroundImage: 'url("https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&q=80")'
+                    backgroundImage: 'url("/images/photo-1431324155629-1a6deb1dec8d.webp")'
                   }}
                 ></div>
               </div>
@@ -140,7 +134,7 @@ export function Products() {
                 <div 
                   className="md:w-1/2 h-[400px] bg-cover bg-center"
                   style={{
-                    backgroundImage: 'url("https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80")'
+                    backgroundImage: 'url("/images/ezgif-1-3969b59b.webp")'
                   }}
                 ></div>
               </div>
@@ -195,7 +189,7 @@ export function Products() {
                 <div 
                   className="md:w-1/2 h-[400px] bg-cover bg-center"
                   style={{
-                    backgroundImage: 'url("https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80")'
+                    backgroundImage: 'url("/images/ezgif-1-3969b59b.webp")'
                   }}
                 ></div>
               </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, ChevronRight, Target, FileText, Users, Trophy, CheckCircle, Clock, Brain } from 'lucide-react';
+import { Target, FileText, Users, Trophy, CheckCircle, Clock, Brain } from 'lucide-react';
 
 export function Funding() {
   return (
@@ -109,20 +109,23 @@ export function Funding() {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Contact CTA */}
-          <div className="mt-12 text-center">
-            <button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-opacity-80 transition-all duration-300"
-            >
-              <Mail className="w-5 h-5" />
-              Skontaktuj się z nami
-            </button>
-          </div>
-        </div>
       </div>
+
+      {/* Image Banner */}
+      <div className="mt-12 px-4 sm:px-6 lg:px-8">
+        <img 
+          src="/images/belka.png" 
+          alt="Banner" 
+          className="w-full h-auto object-cover max-w-full mx-auto rounded-lg shadow-lg"
+          style={{
+            maxHeight: '120px',
+            objectFit: 'cover',
+            objectPosition: 'center'
+          }}
+        />
+      </div>
+    </div>
+  </div>
     </div>
   );
 }

@@ -3,7 +3,6 @@ import {
   GraduationCap, 
   Award, 
   Globe2, 
-  BookOpen,
   Brain,
   Users,
   Medal,
@@ -36,12 +35,13 @@ export function Team() {
           <div className="max-w-6xl mx-auto">
             <div className="bg-card rounded-2xl shadow-md overflow-hidden">
               <div className="md:flex">
-                <div className="md:w-2/5 p-8">
+                <div className="md:w-2/5 p-4 sm:p-8">
                   <div className="aspect-square rounded-xl overflow-hidden mb-6">
                     <img 
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80" 
+                      src="/images/krystian.webp" 
                       alt="dr Krystian Rubajczyk"
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                   <div className="space-y-4">
@@ -124,12 +124,13 @@ export function Team() {
           <div className="max-w-6xl mx-auto">
             <div className="bg-background rounded-2xl shadow-md overflow-hidden">
               <div className="md:flex flex-row-reverse">
-                <div className="md:w-2/5 p-8">
+                <div className="md:w-2/5 p-4 sm:p-8">
                   <div className="aspect-square rounded-xl overflow-hidden mb-6">
                     <img 
-                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80" 
+                      src="/images/jarek.webp" 
                       alt="dr Jarosław Gambal"
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                   <div className="space-y-4">

@@ -21,7 +21,7 @@ export function SoccerTalentPredictor() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&q=80"
+            src="/images/photo-1431324155629-1a6deb1dec8d.webp"
             alt="Young soccer player"
             className="w-full h-full object-cover"
           />

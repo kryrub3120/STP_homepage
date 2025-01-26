@@ -20,7 +20,7 @@ const BLOG_POSTS: BlogPost[] = [
     title: 'Jak AI rewolucjonizuje skauting piłkarski?',
     description: 'Odkryj, jak sztuczna inteligencja zmienia sposób identyfikacji młodych talentów w piłce nożnej.',
     date: '2024-03-15',
-    image: 'https://images.unsplash.com/photo-1560525821-d5615ef80c69?auto=format&fit=crop&q=80',
+    image: '/images/ezgif-1-3969b59b.webp',
     category: 'Technologia'
   },
   {
@@ -28,7 +28,7 @@ const BLOG_POSTS: BlogPost[] = [
     title: 'Predykcja sukcesu sportowego - mity i fakty',
     description: 'Analiza najnowszych badań dotyczących przewidywania potencjału sportowego młodych zawodników.',
     date: '2024-03-12',
-    image: 'https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80',
+    image: '/images/ezgif-1-3969b59b.webp',
     category: 'Badania'
   },
   {
@@ -36,7 +36,7 @@ const BLOG_POSTS: BlogPost[] = [
     title: 'Rozwój motoryczny młodych piłkarzy',
     description: 'Kompleksowy przewodnik po kluczowych aspektach rozwoju fizycznego młodych sportowców.',
     date: '2024-03-08',
-    image: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&q=80',
+    image: '/images/photo-1431324155629-1a6deb1dec8d.webp',
     category: 'Poradniki'
   },
   {
@@ -44,7 +44,7 @@ const BLOG_POSTS: BlogPost[] = [
     title: 'Machine Learning w sporcie',
     description: 'Jak uczenie maszynowe pomaga w analizie potencjału sportowego?',
     date: '2024-03-05',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80',
+    image: '/images/ezgif-1-3969b59b.webp',
     category: 'Technologia'
   },
   {
@@ -52,7 +52,7 @@ const BLOG_POSTS: BlogPost[] = [
     title: 'Sukces młodych talentów',
     description: 'Historie sukcesu zawodników zidentyfikowanych przez systemy predykcyjne.',
     date: '2024-03-01',
-    image: 'https://images.unsplash.com/photo-1543351611-58f69d7c1781?auto=format&fit=crop&q=80',
+    image: '/images/ezgif-1-3969b59b.webp',
     category: 'Historie'
   }
 ];

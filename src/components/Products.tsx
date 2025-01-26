@@ -1,5 +1,5 @@
 import React from 'react';
-import { Brain, Target, Users, ChevronRight, Trophy, LineChart, Search, FileSpreadsheet, BarChart3 } from 'lucide-react';
+import { Brain, Target, ChevronRight, Trophy, LineChart, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export function Products() {
@@ -26,7 +26,7 @@ export function Products() {
             <div className="bg-card rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
               <div className="aspect-[16/9] relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&q=80"
+                  src="/images/photo-1431324155629-1a6deb1dec8d.webp"
                   alt="Soccer player analysis"
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />

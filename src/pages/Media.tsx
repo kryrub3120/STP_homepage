@@ -123,6 +123,57 @@ export function Media() {
           </div>
         </div>
 
+        {/* Downloads Section */}
+        <div className="bg-card rounded-xl p-8">
+          <h2 className="text-2xl font-bold text-text mb-6">
+            Materiały prasowe i zasoby dla mediów
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {downloadResources.map((resource, index) => (
+              <div 
+                key={index}
+                className="bg-background p-6 rounded-xl border border-white/10 hover:border-primary/30 
+                         transition-all duration-300 group"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    {resource.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-text mb-1">{resource.title}</h3>
+                    <p className="text-sm text-muted mb-3">{resource.description}</p>
+                    <div className="flex items-center gap-4">
+                      <span className="text-xs text-muted">{resource.format}</span>
+                      <span className="text-xs text-muted">{resource.size}</span>
+                    </div>
+                  </div>
+                  <a
+                    href={resource.url}
+                    className="flex items-center justify-center w-10 h-10 bg-primary/10 rounded-lg
+                             hover:bg-primary/20 transition-colors group-hover:scale-105"
+                    download
+                  >
+                    <Download className="w-5 h-5 text-primary" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 text-center">
+            <a 
+              href="#contact"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-lg
+                       hover:bg-primary/90 transition-all duration-300 transform hover:scale-105
+                       shadow-lg hover:shadow-primary/20 group"
+            >
+              <Phone className="w-5 h-5" />
+              <span>Skontaktuj się z działem PR</span>
+              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+        </div>
 
         {/* Media Contact */}
         <div id="contact" className="bg-card rounded-xl p-8">

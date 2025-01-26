@@ -7,7 +7,7 @@ export function Hero() {
   const particlesInit = useParticles();
 
   return (
-    <div className="relative min-h-screen flex items-center bg-background overflow-hidden">
+    <div className="relative min-h-screen flex items-center bg-background overflow-hidden pt-20">
       {/* Particle Background */}
       <div id="tsparticles" className="absolute inset-0 opacity-30" />
 

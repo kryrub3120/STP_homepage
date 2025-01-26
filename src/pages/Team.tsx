@@ -39,7 +39,7 @@ export function Team() {
                 <div className="md:w-2/5 p-8">
                   <div className="aspect-square rounded-xl overflow-hidden mb-6">
                     <img 
-                      src="/images/krystian.webp"
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80" 
                       alt="dr Krystian Rubajczyk"
                       className="w-full h-full object-cover"
                     />
@@ -127,7 +127,7 @@ export function Team() {
                 <div className="md:w-2/5 p-8">
                   <div className="aspect-square rounded-xl overflow-hidden mb-6">
                     <img 
-                      src="/images/jarek.webp"
+                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80" 
                       alt="dr Jarosław Gambal"
                       className="w-full h-full object-cover"
                     />

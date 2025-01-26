@@ -50,6 +50,18 @@ export function Navbar() {
 
   const closeMenu = () => setIsMenuOpen(false);
 
+  useEffect(() => {
+    const handleLinkClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (target.tagName === 'A' || target.closest('a')) {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener('click', handleLinkClick);
+    return () => document.removeEventListener('click', handleLinkClick);
+  }, []);
+
   return (
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${

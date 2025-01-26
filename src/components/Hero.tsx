@@ -1,22 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { ChevronRight, Brain, Mail, Activity, LineChart } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useParticles } from '../hooks/useParticles';
 
 export function Hero() {
-  const particlesInit = useParticles();
-
   return (
     <div className="relative min-h-screen flex items-center bg-background overflow-hidden pt-20">
-      {/* Particle Background */}
-      <div id="tsparticles" className="absolute inset-0 opacity-30" />
-
       {/* Background Image with Gradient Overlay */}
       <div className="absolute inset-0">
         <img
-o          src="/images/photo-1551958219-acbc608c6377.webp"
+          src="/images/photo-1551958219-acbc608c6377.webp"
           alt="Sport analysis"
           className="absolute min-w-full min-h-full object-cover"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/80" />
       </div>
@@ -38,7 +33,7 @@ o          src="/images/photo-1551958219-acbc608c6377.webp"
           </h1>
 
           {/* Description */}
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl animate-slide-up delay-200">
+          <p className="text-base md:text-xl text-gray-300 mb-12 max-w-2xl">
             Wykorzystujemy sztuczną inteligencję i zaawansowaną analitykę do precyzyjnej 
             oceny potencjału sportowego młodych zawodników. Wspieramy trenerów i kluby 
             w podejmowaniu kluczowych decyzji rozwojowych.

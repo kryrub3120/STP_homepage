@@ -1,309 +1,221 @@
-import React, { useState } from 'react';
-import Countdown from 'react-countdown';
-import { 
-  Clock, 
-  Send, 
-  CheckCircle,
-  AlertCircle,
-  ChevronRight
-} from 'lucide-react';
-import { supabase } from '../lib/supabase';
+import React from 'react';
+import { Phone, Mail, MessageCircle, Star, Users, Brain, Target, Clock } from 'lucide-react';
 
-interface FormData {
-  firstName: string;
-  lastName: string;
-  email: string;
-  club?: string;
-}
-
-interface FormStatus {
-  type: 'success' | 'error' | null;
-  message: string;
+interface Testimonial {
+  name: string;
+  role: string;
+  club: string;
+  quote: string;
 }
 
 export function Demo() {
-  const [formData, setFormData] = useState<FormData>({
-    firstName: '',
-    lastName: '',
-    email: '',
-    club: ''
-  });
-
-  const [status, setStatus] = useState<FormStatus>({
-    type: null,
-    message: ''
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const validateEmail = (email: string): boolean => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus({ type: null, message: '' });
-
-    // Validate form
-    if (!formData.firstName.trim() || !formData.lastName.trim()) {
-      setStatus({
-        type: 'error',
-        message: 'Imię i nazwisko są wymagane'
-      });
-      return;
+  const testimonials: Testimonial[] = [
+    {
+      name: "Karol Kaszowski",
+      role: "Trener UEFA A",
+      club: "FC Wrocław Academy",
+      quote: "Soccer Talent Predictor to przełomowe narzędzie w identyfikacji młodych talentów. Precyzyjne analizy znacząco usprawniły moją pracę."
+    },
+    {
+      name: "Michał Pawlak",
+      role: "Trener techniki indywiudalnej",
+      club: "MP Sports",
+      quote: "Dzięki tej platformie mogę lepiej zrozumieć potencjał każdego zawodnika i zaplanować jego indywidualny rozwój."
     }
-
-    if (!validateEmail(formData.email)) {
-      setStatus({
-        type: 'error',
-        message: 'Proszę podać prawidłowy adres email'
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    try {
-      const { error } = await supabase
-        .from('demo_registrations')
-        .insert([
-          {
-            name: `${formData.firstName} ${formData.lastName}`,
-            email: formData.email,
-            club: formData.club || null
-          }
-        ]);
-
-      if (error) {
-        if (error.code === '23505') { // Unique violation
-          throw new Error('Ten adres email jest już zarejestrowany');
-        }
-        throw error;
-      }
-
-      setStatus({
-        type: 'success',
-        message: 'Rejestracja przebiegła pomyślnie! Sprawdź swoją skrzynkę email.'
-      });
-
-      // Clear form
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        club: ''
-      });
-
-    } catch (error) {
-      setStatus({
-        type: 'error',
-        message: error instanceof Error ? error.message : 'Wystąpił błąd podczas rejestracji. Spróbuj ponownie później.'
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const targetDate = new Date("2025-06-30T00:00:00").getTime();
+  ];
 
   return (
     <div className="pt-16 min-h-screen bg-background">
-      {/* Header Section */}
-      <div className="bg-card py-16">
+      {/* Hero Section */}
+      <div className="relative min-h-[60vh] flex items-center">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&q=80"
+            alt="Young soccer players"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/80" />
+        </div>
+
+        {/* Content */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-8">
+              <Target className="w-4 h-4" />
+              <span className="text-sm font-medium">Miesiąc za darmo</span>
+            </div>
+
+            <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-8">
+              Soccer Talent Predictor
+              <span className="block text-primary mt-2">
+                Odkryj Talent, Zbuduj Przewagę
+              </span>
+            </h1>
+
+            <p className="text-xl text-gray-300 mb-12 max-w-2xl">
+              Wypróbuj nasz system za darmo przez 30 dni. Bez zobowiązań, bez ukrytych opłat.
+              Przekonaj się, jak AI może wspomóc rozwój młodych talentów.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Contact Options */}
+      <div className="py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Phone Contact */}
+              <a
+                href="tel:+48697319807"
+                className="group bg-card p-8 rounded-2xl hover:shadow-xl transition-all duration-300 
+                         transform hover:-translate-y-1 text-center"
+              >
+                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6
+                              group-hover:scale-110 transition-transform">
+                  <Phone className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-text mb-4">Zadzwoń do nas</h3>
+                <p className="text-muted mb-6">Porozmawiaj z naszym ekspertem</p>
+                <p className="text-primary font-semibold group-hover:scale-105 transition-transform">
+                  +48 697 319 807
+                </p>
+              </a>
+
+              {/* Email Contact */}
+              <a
+                href="mailto:biuro@potencjaldosportu.pl"
+                className="group bg-card p-8 rounded-2xl hover:shadow-xl transition-all duration-300 
+                         transform hover:-translate-y-1 text-center"
+              >
+                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6
+                              group-hover:scale-110 transition-transform">
+                  <Mail className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-text mb-4">Napisz do nas</h3>
+                <p className="text-muted mb-6">Wyślij wiadomość e-mail</p>
+                <p className="text-primary font-semibold group-hover:scale-105 transition-transform">
+                  biuro@potencjaldosportu.pl
+                </p>
+              </a>
+
+              {/* WhatsApp Contact */}
+              <a
+                href="https://wa.me/48697319807"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-card p-8 rounded-2xl hover:shadow-xl transition-all duration-300 
+                         transform hover:-translate-y-1 text-center"
+              >
+                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6
+                              group-hover:scale-110 transition-transform">
+                  <MessageCircle className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-text mb-4">WhatsApp</h3>
+                <p className="text-muted mb-6">Napisz na WhatsApp</p>
+                <p className="text-primary font-semibold group-hover:scale-105 transition-transform">
+                  Kliknij, aby otworzyć czat
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Key Features */}
+      <div className="py-16 bg-card">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <Brain className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-lg font-bold text-text mb-2">AI Analysis</h3>
+                <p className="text-muted">Zaawansowana analiza predyspozycji sportowych</p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <Target className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-lg font-bold text-text mb-2">Predykcja</h3>
+                <p className="text-muted">Precyzyjne prognozy rozwoju zawodnika</p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <Users className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-lg font-bold text-text mb-2">Wsparcie</h3>
+                <p className="text-muted">Pełne wsparcie dla trenerów i klubów</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Testimonials */}
+      <div className="py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold text-text text-center mb-12">
+              Co mówią o nas trenerzy?
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {testimonials.map((testimonial, index) => (
+                <div 
+                  key={index}
+                  className="bg-card p-8 rounded-2xl hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="flex items-center gap-2 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-primary" fill="currentColor" />
+                    ))}
+                  </div>
+                  <p className="text-muted mb-6 italic">"{testimonial.quote}"</p>
+                  <div>
+                    <p className="font-semibold text-text">{testimonial.name}</p>
+                    <p className="text-sm text-muted">{testimonial.role}</p>
+                    <p className="text-sm text-primary">{testimonial.club}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Final CTA */}
+      <div className="py-16 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl font-bold text-text mb-6">
-              DEMO Soccer Talent Predictor
-            </h1>
-            <p className="text-xl text-muted mb-8">
-              Zarejestruj się już teraz, aby uzyskać 3-miesięczny darmowy dostęp do Soccer Talent Predictor
+            <Clock className="w-12 h-12 text-primary mx-auto mb-6" />
+            <h2 className="text-3xl font-bold text-text mb-6">
+              Nie czekaj - zacznij już dziś!
+            </h2>
+            <p className="text-lg text-muted mb-8">
+              Skontaktuj się z nami i rozpocznij 30-dniowy okres próbny. 
+              Przekonaj się, jak Soccer Talent Predictor może wspomóc rozwój młodych talentów.
             </p>
-            <div className="flex items-center justify-center gap-3 text-primary">
-              <Clock className="w-6 h-6" />
-              <span className="text-lg font-semibold">Start: 30.06.2025 r.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Countdown Timer */}
-      <div className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-card rounded-2xl shadow-lg p-8">
-              <div className="text-center">
-                <h2 className="text-xl font-semibold text-text mb-6">
-                  Do startu pozostało:
-                </h2>
-                <Countdown 
-                  date={targetDate}
-                  renderer={({ days, hours, minutes, seconds }) => (
-                    <div className="grid grid-cols-4 gap-4">
-                      <div className="text-center">
-                        <div className="text-4xl font-bold text-primary">{days}</div>
-                        <div className="text-sm text-muted">Dni</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-4xl font-bold text-primary">{hours}</div>
-                        <div className="text-sm text-muted">Godzin</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-4xl font-bold text-primary">{minutes}</div>
-                        <div className="text-sm text-muted">Minut</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-4xl font-bold text-primary">{seconds}</div>
-                        <div className="text-sm text-muted">Sekund</div>
-                      </div>
-                    </div>
-                  )}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Registration Form */}
-      <div className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-card rounded-2xl shadow-lg p-8">
-              <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-text mb-4">
-                  Zarejestruj się na DEMO
-                </h2>
-                <p className="text-muted">
-                  Wypełnij formularz, aby otrzymać dostęp do wersji demonstracyjnej
-                </p>
-              </div>
-
-              {status.type && (
-                <div className={`mb-6 p-4 rounded-lg flex items-start gap-3 ${
-                  status.type === 'success' ? 'bg-green-500/10 text-green-500' : 'bg-red-500/10 text-red-500'
-                }`}>
-                  {status.type === 'success' ? (
-                    <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                  ) : (
-                    <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                  )}
-                  <p>{status.message}</p>
-                </div>
-              )}
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-muted mb-2">
-                      Imię
-                    </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-background text-text rounded-lg border border-white/10 
-                               focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent 
-                               transition-all"
-                      required
-                      disabled={isSubmitting}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-muted mb-2">
-                      Nazwisko
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-background text-text rounded-lg border border-white/10 
-                               focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent 
-                               transition-all"
-                      required
-                      disabled={isSubmitting}
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-muted mb-2">
-                    E-mail
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-background text-text rounded-lg border border-white/10 
-                             focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent 
-                             transition-all"
-                    required
-                    disabled={isSubmitting}
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="club" className="block text-sm font-medium text-muted mb-2">
-                    Klub (opcjonalnie)
-                  </label>
-                  <input
-                    type="text"
-                    id="club"
-                    name="club"
-                    value={formData.club}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-background text-text rounded-lg border border-white/10 
-                             focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent 
-                             transition-all"
-                    disabled={isSubmitting}
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-primary 
-                           text-white rounded-lg hover:bg-primary/90 transition-all duration-300 
-                           group font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      <span>Przetwarzanie...</span>
-                    </>
-                  ) : (
-                    <>
-                      <span>Zarejestruj się na DEMO</span>
-                      <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </>
-                  )}
-                </button>
-
-                <p className="text-sm text-muted text-center">
-                  Rejestrując się, akceptujesz nasz{' '}
-                  <a href="/terms" className="text-primary hover:text-primary/80 transition-colors">
-                    regulamin
-                  </a>
-                  {' '}i{' '}
-                  <a href="/privacy-policy" className="text-primary hover:text-primary/80 transition-colors">
-                    politykę prywatności
-                  </a>
-                </p>
-              </form>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="tel:+48697319807"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary 
+                         text-white rounded-lg hover:bg-primary/90 transition-all duration-300 
+                         transform hover:scale-105 shadow-lg hover:shadow-primary/20"
+              >
+                <Phone className="w-5 h-5" />
+                <span className="font-semibold">Zadzwoń teraz</span>
+              </a>
+              <a
+                href="mailto:biuro@potencjaldosportu.pl"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 
+                         border-primary text-primary rounded-lg hover:bg-primary/10 
+                         transition-all duration-300 transform hover:scale-105"
+              >
+                <Mail className="w-5 h-5" />
+                <span className="font-semibold">Wyślij e-mail</span>
+              </a>
             </div>
           </div>
         </div>

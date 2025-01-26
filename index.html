@@ -2,64 +2,31 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <meta name="theme-color" content="#121212" />
-    
-    <!-- SEO Meta Tags -->
-    <title>Sportpredictor - Predykcja Talentów Sportowych | Analiza Motoryczna</title>
-    <meta name="description" content="Innowacyjne rozwiązania wspierające rozwój młodych talentów sportowych. Wykorzystujemy sztuczną inteligencję do analizy motorycznej i predykcji potencjału zawodników." />
-    <meta name="keywords" content="predykcja talentów sportowych, analiza motoryczna, wsparcie dla trenerów, rozwój młodych sportowców" />
-    
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://potencjaldosportu.pl" />
-    <meta property="og:title" content="Sportpredictor - Predykcja Talentów Sportowych" />
-    <meta property="og:description" content="Innowacyjne rozwiązania wspierające rozwój młodych talentów sportowych. Wykorzystujemy AI do analizy motorycznej." />
-    <meta property="og:image" content="https://potencjaldosportu.pl/og-image.jpg" />
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sportpredictor - Predykcja Talentów Sportowych" />
-    <meta name="twitter:description" content="Innowacyjne rozwiązania wspierające rozwój młodych talentów sportowych. Wykorzystujemy AI do analizy motorycznej." />
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Sportpredictor",
-      "url": "https://potencjaldosportu.pl",
-      "logo": "https://potencjaldosportu.pl/logo.svg",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+48697319807",
-        "contactType": "customer service",
-        "email": "biuro@potencjaldosportu.pl"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "PL"
-      }
-    }
-    </script>
-    
-    <!-- Performance Optimizations -->
-    <link rel="preload" href="/src/index.css" as="style">
-    <link rel="preload" href="/src/main.tsx" as="script">
-    <link rel="preconnect" href="https://images.unsplash.com">
-    
-    <!-- Cache Control -->
-    <meta http-equiv="Cache-Control" content="max-age=31536000">
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+
+    <title>Sportpredictor - Odkryj potencjał młodych talentów z pomocą AI</title>
+
+    <meta name="description" content="Odkryj potencjał młodych talentów z pomocą AI. Wykorzystujemy sztuczną inteligencję i zaawansowaną analitykę do precyzyjnej oceny potencjału sportowego młodych zawodników." />
+    <meta name="keywords" content="sport, sztuczna inteligencja, AI, analiza sportowa, młode talenty, potencjał sportowy" />
+    <meta name="author" content="Sportpredictor" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://sportpredictor.com" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-020MLSBZQT"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', 'G-020MLSBZQT', {
+        page_path: window.location.pathname,
+        cookie_domain: 'potencjaldosportu.pl',
+        cookie_flags: 'SameSite=None;Secure'
+      });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
   </head>
   <body>
     <div id="root"></div>

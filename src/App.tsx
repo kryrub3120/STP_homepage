@@ -1,15 +1,8 @@
-import React, { Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { CookieConsent } from './components/CookieConsent';
-
-// Loading component
-const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center">
-    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
-  </div>
-);
 
 // Lazy load pages
 const Home = React.lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
@@ -28,12 +21,33 @@ const Blog = React.lazy(() => import('./pages/Blog').then(module => ({ default: 
 const BlogPost = React.lazy(() => import('./pages/BlogPost').then(module => ({ default: module.BlogPost })));
 const Media = React.lazy(() => import('./pages/Media').then(module => ({ default: module.Media })));
 
+// Loading component
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+  </div>
+);
+
 export default function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Track page views on route change
+    if (window.gtag) {
+      window.gtag('event', 'page_view', {
+        page_title: document.title,
+        page_location: window.location.href,
+        page_path: location.pathname,
+        send_to: 'G-020MLSBZQT'
+      });
+    }
+  }, [location]);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
-        <Suspense fallback={<PageLoader />}>
+        <React.Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -51,7 +65,7 @@ export default function App() {
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/media" element={<Media />} />
           </Routes>
-        </Suspense>
+        </React.Suspense>
       </main>
       <Footer />
       <CookieConsent />

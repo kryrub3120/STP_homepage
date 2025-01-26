@@ -1,210 +1,238 @@
-import React from 'react';
-import { Mail, ExternalLink, Download, FileImage, FileText, FileVideo, Presentation as FilePresentation, Camera, MessageSquare, ChevronRight, Phone } from 'lucide-react';
-
-interface DownloadResource {
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-  format: string;
-  size: string;
-  url: string;
-}
+import React, { useEffect } from 'react';
+import { 
+  Mail, 
+  Phone,
+  Newspaper,
+  Mic,
+  BookOpen,
+  BarChart3,
+  MessageSquare,
+  Target,
+  Search,
+  Laptop,
+  Database,
+  LineChart
+} from 'lucide-react';
 
 export function Media() {
-  const downloadResources: DownloadResource[] = [
+  useEffect(() => {
+    // Track page view
+    if (window.gtag) {
+      window.gtag('event', 'page_view', {
+        page_title: 'Centrum Prasowe',
+        page_location: window.location.href,
+        page_path: window.location.pathname,
+        send_to: 'G-020MLSBZQT'
+      });
+    }
+  }, []);
+
+  const expertiseAreas = [
     {
-      title: "Logotypy Sportpredictor",
-      description: "Paczka zawierająca logotypy w różnych formatach i wersjach kolorystycznych",
-      icon: <FileImage className="w-6 h-6 text-primary" />,
-      format: "ZIP (PNG, SVG, EPS)",
-      size: "12.5 MB",
-      url: "#"
+      icon: <Mic className="w-6 h-6 text-primary" />,
+      title: "Wywiady eksperckie",
+      description: "Nasi eksperci są dostępni do wywiadów na temat innowacji w sporcie, sztucznej inteligencji i rozwoju młodych talentów."
     },
     {
-      title: "Broszura informacyjna",
-      description: "Szczegółowa prezentacja naszych rozwiązań i technologii",
-      icon: <FileText className="w-6 h-6 text-primary" />,
-      format: "PDF",
-      size: "3.2 MB",
-      url: "#"
-    },
-    {
-      title: "Zdjęcia zespołu i biura",
-      description: "Wysokiej jakości zdjęcia do wykorzystania w publikacjach",
-      icon: <Camera className="w-6 h-6 text-primary" />,
-      format: "ZIP (JPEG)",
-      size: "45.8 MB",
-      url: "#"
-    },
-    {
-      title: "Komunikaty prasowe",
-      description: "Archiwum komunikatów prasowych z ostatnich 12 miesięcy",
       icon: <MessageSquare className="w-6 h-6 text-primary" />,
-      format: "PDF",
-      size: "1.8 MB",
-      url: "#"
+      title: "Komentarze branżowe",
+      description: "Oferujemy eksperckie komentarze dotyczące aktualnych trendów i wydarzeń w świecie sportu i technologii."
     },
     {
-      title: "Prezentacja firmy",
-      description: "Kompleksowa prezentacja Sportpredictor i naszych rozwiązań",
-      icon: <FilePresentation className="w-6 h-6 text-primary" />,
-      format: "PDF",
-      size: "5.4 MB",
-      url: "#"
+      icon: <BookOpen className="w-6 h-6 text-primary" />,
+      title: "Informacje o projektach i badaniach",
+      description: "Dzielimy się wiedzą o naszych innowacyjnych projektach i najnowszych badaniach w dziedzinie predykcji sportowej."
     },
     {
-      title: "Case Studies",
-      description: "Przykłady wdrożeń i sukcesów naszych klientów",
-      icon: <FileText className="w-6 h-6 text-primary" />,
-      format: "PDF",
-      size: "2.7 MB",
-      url: "#"
+      icon: <BarChart3 className="w-6 h-6 text-primary" />,
+      title: "Dane i analizy",
+      description: "Udostępniamy dane i analizy dotyczące rozwoju młodych talentów sportowych oraz trendy w wykorzystaniu AI w sporcie."
+    }
+  ];
+
+  const keyTopics = [
+    {
+      icon: <Search className="w-6 h-6 text-primary" />,
+      title: "Dobór i selekcja w sporcie",
+      description: "Nowoczesne metody identyfikacji i selekcji zawodników."
     },
     {
-      title: "Materiały wideo",
-      description: "Filmy prezentacyjne i animacje produktowe",
-      icon: <FileVideo className="w-6 h-6 text-primary" />,
-      format: "ZIP (MP4)",
-      size: "156 MB",
-      url: "#"
+      icon: <Target className="w-6 h-6 text-primary" />,
+      title: "Identyfikacja talentów",
+      description: "Innowacyjne podejście do odkrywania młodych talentów."
+    },
+    {
+      icon: <Laptop className="w-6 h-6 text-primary" />,
+      title: "Nowe technologie w piłce nożnej",
+      description: "Wykorzystanie AI i zaawansowanej analityki w rozwoju zawodników."
+    },
+    {
+      icon: <Database className="w-6 h-6 text-primary" />,
+      title: "Optymalizacja danych w procesach treningowych",
+      description: "Jak dane wspierają rozwój zawodników i planowanie treningów."
+    },
+    {
+      icon: <LineChart className="w-6 h-6 text-primary" />,
+      title: "Wykorzystanie danych w analizie meczów na żywo",
+      description: "Real-time analityka i jej wpływ na decyzje taktyczne."
     }
   ];
 
   return (
     <div className="pt-16 min-h-screen bg-background">
-      {/* Header */}
+      {/* Hero Section */}
       <div className="bg-card py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
+            <Newspaper className="w-12 h-12 text-primary mx-auto mb-6" />
             <h1 className="text-3xl sm:text-4xl font-bold text-text mb-6">
               Centrum prasowe
             </h1>
             <p className="text-xl text-muted">
-              Informacje i materiały dla mediów
+              Jesteśmy do dyspozycji mediów w zakresie ekspertyz, komentarzy i informacji 
+              o innowacjach w sporcie
             </p>
           </div>
         </div>
       </div>
 
-      {/* Content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
-        {/* Newsletter Section */}
-        <div className="bg-card rounded-xl p-8">
-          <div className="max-w-2xl">
-            <h2 className="text-2xl font-bold text-text mb-2">Biuletyn dla mediów</h2>
-            <p className="text-muted mb-6">
-              Zapisz się do naszego biuletynu, aby otrzymywać najnowsze informacje prasowe, 
-              aktualności i materiały bezpośrednio na swoją skrzynkę.
-            </p>
-
-            <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
-              <div className="relative">
-                <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted w-5 h-5" />
-                <input
-                  type="email"
-                  placeholder="Twój adres e-mail"
-                  className="w-full pl-12 pr-4 py-3 bg-background border border-white/10 rounded-lg
-                           focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
-                           text-text placeholder-muted transition-all"
-                  required
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full sm:w-auto px-6 py-3 bg-primary text-white rounded-lg
-                         hover:bg-primary/90 transition-all duration-300 flex items-center 
-                         justify-center gap-2 group"
-              >
-                <span>Zapisz się</span>
-                <Mail className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </form>
-          </div>
-        </div>
-
-        {/* Downloads Section */}
-        <div className="bg-card rounded-xl p-8">
-          <h2 className="text-2xl font-bold text-text mb-6">
-            Materiały prasowe i zasoby dla mediów
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {downloadResources.map((resource, index) => (
-              <div 
-                key={index}
-                className="bg-background p-6 rounded-xl border border-white/10 hover:border-primary/30 
-                         transition-all duration-300 group"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    {resource.icon}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-text mb-1">{resource.title}</h3>
-                    <p className="text-sm text-muted mb-3">{resource.description}</p>
-                    <div className="flex items-center gap-4">
-                      <span className="text-xs text-muted">{resource.format}</span>
-                      <span className="text-xs text-muted">{resource.size}</span>
+      {/* Expertise Areas */}
+      <div className="py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl font-bold text-text text-center mb-12">
+              Jesteśmy dostępni dla mediów
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {expertiseAreas.map((area, index) => (
+                <div 
+                  key={index}
+                  className="bg-card p-8 rounded-xl hover:shadow-xl transition-all duration-300 
+                           transform hover:-translate-y-1"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center 
+                                justify-center flex-shrink-0">
+                      {area.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-text mb-2">{area.title}</h3>
+                      <p className="text-muted">{area.description}</p>
                     </div>
                   </div>
-                  <a
-                    href={resource.url}
-                    className="flex items-center justify-center w-10 h-10 bg-primary/10 rounded-lg
-                             hover:bg-primary/20 transition-colors group-hover:scale-105"
-                    download
-                  >
-                    <Download className="w-5 h-5 text-primary" />
-                  </a>
                 </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8 text-center">
-            <a 
-              href="#contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-lg
-                       hover:bg-primary/90 transition-all duration-300 transform hover:scale-105
-                       shadow-lg hover:shadow-primary/20 group"
-            >
-              <Phone className="w-5 h-5" />
-              <span>Skontaktuj się z działem PR</span>
-              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+              ))}
+            </div>
           </div>
         </div>
+      </div>
 
-        {/* Media Contact */}
-        <div id="contact" className="bg-card rounded-xl p-8">
-          <h2 className="text-2xl font-bold text-text mb-6">Kontakt dla mediów</h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="font-semibold text-text mb-2">Zapytania prasowe</h3>
-              <a 
-                href="mailto:biuro@potencjaldosportu.pl"
-                className="text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-2"
-              >
-                <Mail className="w-5 h-5" />
-                biuro@potencjaldosportu.pl
-              </a>
+      {/* Key Topics Section */}
+      <div className="py-16 bg-card">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl font-bold text-text text-center mb-12">
+              Nasze wiodące tematy
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              {keyTopics.map((topic, index) => (
+                <div 
+                  key={index}
+                  className="bg-background p-6 rounded-xl hover:shadow-xl transition-all duration-300 
+                           transform hover:-translate-y-1"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center 
+                                justify-center flex-shrink-0">
+                      {topic.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-text mb-2">{topic.title}</h3>
+                      <p className="text-sm text-muted">{topic.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
 
-            <div className="mt-8 p-4 bg-background rounded-lg border border-white/10">
-              <div className="flex items-start gap-3">
-                <ExternalLink className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                <div>
-                  <p className="text-muted">
-                    Jesteśmy dostępni dla mediów w zakresie:
-                  </p>
-                  <ul className="list-disc list-inside text-muted mt-2 space-y-1">
-                    <li>Wywiadów eksperckich</li>
-                    <li>Komentarzy branżowych</li>
-                    <li>Informacji o naszych projektach i badaniach</li>
-                    <li>Danych i analiz dotyczących rozwoju młodych talentów</li>
-                  </ul>
-                </div>
+            {/* Expert Contact CTA */}
+            <div className="bg-background/50 rounded-2xl p-8 backdrop-blur-sm border border-white/10">
+              <div className="text-center mb-8">
+                <h3 className="text-xl font-bold text-text mb-4">
+                  Potrzebujesz więcej informacji?
+                </h3>
+                <p className="text-muted">
+                  Skontaktuj się z naszym ekspertem dr Krystianem Rubajczykiem, 
+                  który chętnie odpowie na Twoje pytania i udzieli szczegółowych informacji 
+                  na interesujące Cię tematy.
+                </p>
               </div>
+              <div className="flex flex-col md:flex-row justify-center items-center gap-6">
+                <a 
+                  href="mailto:biuro@potencjaldosportu.pl"
+                  className="flex items-center gap-3 px-6 py-3 bg-primary/10 rounded-lg hover:bg-primary/20 
+                           transition-all duration-300 text-primary"
+                >
+                  <Mail className="w-5 h-5" />
+                  <span>biuro@potencjaldosportu.pl</span>
+                </a>
+                <a 
+                  href="tel:+48697319807"
+                  className="flex items-center gap-3 px-6 py-3 bg-primary/10 rounded-lg hover:bg-primary/20 
+                           transition-all duration-300 text-primary"
+                >
+                  <Phone className="w-5 h-5" />
+                  <span>+48 697 319 807</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Quick Contact */}
+      <div className="py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold text-text text-center mb-12">
+              Szybki kontakt dla mediów
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <a 
+                href="mailto:biuro@potencjaldosportu.pl"
+                className="group bg-card p-8 rounded-xl hover:shadow-xl transition-all 
+                         duration-300 transform hover:-translate-y-1 flex items-start gap-4"
+              >
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center 
+                            justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <Mail className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-text mb-2">Email</h3>
+                  <p className="text-muted mb-2">Zapytania prasowe</p>
+                  <p className="text-primary group-hover:scale-105 transition-transform">
+                    biuro@potencjaldosportu.pl
+                  </p>
+                </div>
+              </a>
+
+              <a 
+                href="tel:+48697319807"
+                className="group bg-card p-8 rounded-xl hover:shadow-xl transition-all 
+                         duration-300 transform hover:-translate-y-1 flex items-start gap-4"
+              >
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center 
+                            justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <Phone className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-text mb-2">Telefon</h3>
+                  <p className="text-muted mb-2">Kontakt bezpośredni</p>
+                  <p className="text-primary group-hover:scale-105 transition-transform">
+                    +48 697 319 807
+                  </p>
+                </div>
+              </a>
             </div>
           </div>
         </div>

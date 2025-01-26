@@ -49,7 +49,7 @@ export function Team() {
                       <GraduationCap className="w-6 h-6 text-primary" />
                       <div>
                         <h3 className="font-semibold text-text">Wykształcenie</h3>
-                        <p className="text-sm text-muted">Doktor nauk o sporcie</p>
+                        <p className="text-sm text-muted">Doktor nauk o kulturze fizycznej</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
@@ -84,8 +84,8 @@ export function Team() {
                       <div>
                         <h3 className="font-semibold text-text mb-2">Osiągnięcia Naukowe</h3>
                         <p className="text-sm text-muted">
-                          Autor ponad 30 publikacji naukowych w prestiżowych czasopismach międzynarodowych. 
-                          Laureat nagrody za innowacje w sporcie (2022).
+                          Autor publikacji naukowych w prestiżowych czasopismach międzynarodowych. 
+                          Laureat programu Narodowego Centrum Nauki "Minitarua 6"
                         </p>
                       </div>
                     </div>
@@ -95,7 +95,7 @@ export function Team() {
                       <div>
                         <h3 className="font-semibold text-text mb-2">Współpraca Międzynarodowa</h3>
                         <p className="text-sm text-muted">
-                          Współpraca z UEFA Youth Development Program i wiodącymi akademiami piłkarskimi w Europie.
+                          Współpraca z wiodącymi akademiami piłkarskimi w kraju i w Europie.
                         </p>
                       </div>
                     </div>

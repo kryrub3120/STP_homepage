@@ -132,7 +132,7 @@ export function Demo() {
                 <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6">
                   <Brain className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-lg font-bold text-text mb-2">AI Analysis</h3>
+                <h3 className="text-lg font-bold text-text mb-2">Analiza AI</h3>
                 <p className="text-muted">Zaawansowana analiza predyspozycji sportowych</p>
               </div>
               <div className="text-center">

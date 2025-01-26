@@ -33,14 +33,6 @@ const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: '3',
-    title: 'Wywiad z trenerem reprezentacji U-17',
-    description: 'Rozmowa o wykorzystaniu nowoczesnych technologii w procesie selekcji młodych talentów.',
-    date: '2024-03-10',
-    image: 'https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&q=80',
-    category: 'Wywiady'
-  },
-  {
-    id: '4',
     title: 'Rozwój motoryczny młodych piłkarzy',
     description: 'Kompleksowy przewodnik po kluczowych aspektach rozwoju fizycznego młodych sportowców.',
     date: '2024-03-08',
@@ -48,7 +40,7 @@ const BLOG_POSTS: BlogPost[] = [
     category: 'Poradniki'
   },
   {
-    id: '5',
+    id: '4',
     title: 'Machine Learning w sporcie',
     description: 'Jak uczenie maszynowe pomaga w analizie potencjału sportowego?',
     date: '2024-03-05',
@@ -56,7 +48,7 @@ const BLOG_POSTS: BlogPost[] = [
     category: 'Technologia'
   },
   {
-    id: '6',
+    id: '5',
     title: 'Sukces młodych talentów',
     description: 'Historie sukcesu zawodników zidentyfikowanych przez systemy predykcyjne.',
     date: '2024-03-01',

@@ -189,7 +189,7 @@ export function Products() {
                 <div 
                   className="md:w-1/2 h-[400px] bg-cover bg-center"
                   style={{
-                    backgroundImage: 'url("/images/ezgif-1-3969b59b.webp")'
+                    backgroundImage: 'url("/images/photo-1551958219-acbc608c6377.webp")'
                   }}
                 ></div>
               </div>

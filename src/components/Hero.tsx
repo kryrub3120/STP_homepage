@@ -14,7 +14,7 @@ export function Hero() {
       {/* Background Image with Gradient Overlay */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80"
+o          src="/images/photo-1551958219-acbc608c6377.webp"
           alt="Sport analysis"
           className="absolute min-w-full min-h-full object-cover"
         />
@@ -50,7 +50,7 @@ export function Hero() {
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                 <Brain className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-white font-semibold mb-2">AI Analysis</h3>
+              <h3 className="text-white font-semibold mb-2">Analiza z AI</h3>
               <p className="text-gray-400 text-sm">
                 Zaawansowana analiza predyspozycji sportowych
               </p>

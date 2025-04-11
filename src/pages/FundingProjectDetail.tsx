@@ -34,8 +34,8 @@ export function FundingProjectDetail() {
 
   return (
     <div className="pt-16 min-h-screen bg-background">
-      {/* Header Section */}
-      <div className="bg-card py-12">
+      {/* Header Section - biała belka na górze */}
+      <div className="bg-background py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <Link 
@@ -66,71 +66,33 @@ export function FundingProjectDetail() {
             <div className="bg-card rounded-xl shadow-md p-8 mb-10">
               {/* Logos Section - zgodnie z wymaganiami o komunikacji dofinansowania */}
               <div className="mb-8">
-                {project.id === 'wdrożenie_Soccer_Talent_Predictor' ? (
+                {project.id === 'wdrozenie_Soccer_Talent_Predictor' ? (
                   <>
                     <h2 className="text-xl font-bold text-text mb-4">Dofinansowanie z Unii Europejskiej</h2>
                     <div className="bg-background/50 p-6 rounded-lg">
-                      <div className="flex flex-wrap justify-center gap-6 mb-6">
-                        {/* 
-                          Wymagane logotypy według specyfikacji (sekcja "b" w opisie projektu):
-                          - Logo Funduszy Europejskich (do dodania)
-                          - Logo Barw Rzeczypospolitej Polskiej (do dodania)
-                          - Logo Unii Europejskiej (jest)
-                          - Herb Województwa Wielkopolskiego (do dodania)
-                        */}
-                        
-                        {/* Logo UE - pionowe dla większych ekranów */}
+                      {/* Biała belka dla projektu wdrożeniowego */}
+                      <div className="flex justify-center w-full">
                         <img 
-                          src="/images/Logo_UE_RGB_UE_Dofinansowane_RGB-3_pionowe.png" 
-                          alt="Logo Unii Europejskiej - Dofinansowane" 
-                          className="hidden md:block h-32 w-auto"
-                        />
-                        
-                        {/* Logo UE - poziome dla mniejszych ekranów */}
-                        <img 
-                          src="/images/Logo_UE_RGB_UE_Dofinansowane_RGB-3.png" 
-                          alt="Logo Unii Europejskiej - Dofinansowane" 
-                          className="md:hidden h-20 w-auto"
+                          src="/images/belka.png" 
+                          alt="Dofinansowanie z Unii Europejskiej" 
+                          className="w-full h-auto object-contain max-h-36"
                         />
                       </div>
                       
-                      <div className="grid md:grid-cols-2 gap-4 mt-8">
-                        <div className="bg-card p-4 rounded-lg">
-                          <p className="text-muted mb-2">Całkowita wartość projektu</p>
-                          <p className="text-2xl font-bold text-primary">{project.totalValue}</p>
-                        </div>
-                        <div className="bg-card p-4 rounded-lg">
-                          <p className="text-muted mb-2">Kwota dofinansowania UE</p>
-                          <p className="text-2xl font-bold text-primary">{project.euFunding}</p>
-                        </div>
-                      </div>
+                      {/* Wartości projektu przeniesione do czarnej belki na dole strony */}
                     </div>
                   </>
                 ) : (
                   <>
                     <h2 className="text-xl font-bold text-text mb-4">Projekt B+R „SPORTPREDICTOR-STP" – współfinansowany z Funduszy Europejskich</h2>
                     <div className="bg-background/50 p-6 rounded-lg">
-                      <div className="grid md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                          <p className="text-sm font-medium text-muted mb-1">Tytuł projektu</p>
-                          <p className="text-lg font-semibold text-text mb-4">{project.title}</p>
-                          
-                          <p className="text-sm font-medium text-muted mb-1">Okres realizacji projektu</p>
-                          <p className="text-text mb-4">01.01.2022 – 31.12.2022</p>
-                        </div>
-                        
-                        <div>
-                          <div className="grid grid-cols-1 gap-4">
-                            <div className="bg-card p-4 rounded-lg">
-                              <p className="text-muted mb-2">Całkowity koszt projektu</p>
-                              <p className="text-xl font-bold text-primary">{project.totalValue}</p>
-                            </div>
-                            <div className="bg-card p-4 rounded-lg">
-                              <p className="text-muted mb-2">Dofinansowanie z Funduszy Europejskich</p>
-                              <p className="text-xl font-bold text-primary">{project.euFunding}</p>
-                            </div>
-                          </div>
-                        </div>
+                      {/* Belka NCBIR dla projektu badawczego */}
+                      <div className="flex justify-center w-full">
+                        <img 
+                          src="/images/belka NCBIR.jpeg" 
+                          alt="Banner NCBIR" 
+                          className="w-full h-auto object-contain max-h-36"
+                        />
                       </div>
                     </div>
                   </>
@@ -203,27 +165,34 @@ export function FundingProjectDetail() {
               </div>
             </div>
 
-            {/* Banner - różne belki dla różnych projektów */}
-            <div className="mt-12">
-              <img 
-                src={
-                  project.id === 'wdrożenie_Soccer_Talent_Predictor' 
-                    ? '/images/belka.png' // Biała belka UE dla projektu UE
-                    : '/images/belka NCBIR.jpeg' // Belka NCBIR dla projektu badawczego
-                } 
-                alt={
-                  project.id === 'wdrożenie_Soccer_Talent_Predictor'
-                    ? 'Banner - dofinansowanie UE'
-                    : 'Banner NCBIR'
-                }
-                className="w-full h-auto object-cover max-w-full mx-auto rounded-lg shadow-md"
-                style={{
-                  maxHeight: '120px',
-                  objectFit: 'cover',
-                  objectPosition: 'center'
-                }}
-              />
+      {/* Wartości projektu i logo na dole strony */}
+      <div className="border-t border-gray-200 py-8 mt-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="flex flex-col items-center gap-6">
+              <div className="grid grid-cols-2 w-full gap-8">
+                <div className="flex flex-col items-center">
+                  <span className="text-sm font-medium text-muted mb-1">Wartość projektu</span>
+                  <span className="text-xl font-bold text-primary">{project.totalValue}</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <span className="text-sm font-medium text-muted mb-1">Dofinansowanie UE</span>
+                  <span className="text-xl font-bold text-primary">{project.euFunding}</span>
+                </div>
+              </div>
+              
+              {/* Logo UE - pionowe pod kwotami */}
+              <div className="mt-8">
+                <img 
+                  src="/images/Logo_UE_RGB_UE_Dofinansowane_RGB-3_pionowe.png" 
+                  alt="Logo Unii Europejskiej - Dofinansowane" 
+                  className="h-24 w-auto grayscale"
+                />
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
           </div>
         </div>
       </div>

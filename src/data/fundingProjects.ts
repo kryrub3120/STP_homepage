@@ -21,7 +21,7 @@ export interface ProjectInfo {
 
 export const fundingProjects: ProjectInfo[] = [
   {
-    id: 'wdrożenie_Soccer_Talent_Predictor',
+    id: 'wdrozenie_Soccer_Talent_Predictor',
     title: 'Wdrożenie wyników prac B+R poprzez wsparcie inwestycji SPORTPREDICTOR Sp. z o.o. w dedykowany system predykcji i analizy potencjału motorycznego zawodników w piłce nożnej – Soccer Talent Predictor',
     status: 'current',
     totalValue: '734 520 PLN',

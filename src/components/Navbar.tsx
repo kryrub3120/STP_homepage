@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Activity, Menu, X } from 'lucide-react';
+import { EuFundingFlag } from './EuFundingFlag';
 
 interface NavLinkProps {
   to: string;
@@ -60,17 +61,20 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          {/* Logo */}
-          <NavLink
-            to="/"
-            className="flex items-center gap-3"
-            onClick={closeMenu}
-          >
-            <Activity className="w-8 h-8 text-primary transition-transform hover:scale-110" />
-            <span className="text-xl font-bold text-white hover:text-primary transition-colors">
-              Sportpredictor
-            </span>
-          </NavLink>
+          {/* Logo and EU Flag */}
+          <div className="flex items-center">
+            <NavLink
+              to="/"
+              className="flex items-center gap-3"
+              onClick={closeMenu}
+            >
+              <Activity className="w-8 h-8 text-primary transition-transform hover:scale-110" />
+              <span className="text-xl font-bold text-white hover:text-primary transition-colors">
+                Sportpredictor
+              </span>
+            </NavLink>
+            <EuFundingFlag />
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-4">
@@ -78,7 +82,7 @@ export function Navbar() {
             <CustomNavLink to="/produkty">Produkty i usługi</CustomNavLink>
             <CustomNavLink to="/zespol">Zespół</CustomNavLink>
             <CustomNavLink to="/o-nas">O nas</CustomNavLink>
-            <CustomNavLink to="/finansowanie">Dofinansowania</CustomNavLink>
+            <CustomNavLink to="/finansowanie">Dofinansowania z UE</CustomNavLink>
             <CustomNavLink to="/media">Dla mediów</CustomNavLink>
             <Link
               to="/demo"
@@ -119,7 +123,7 @@ export function Navbar() {
                 O nas
               </CustomNavLink>
               <CustomNavLink to="/finansowanie" onClick={closeMenu}>
-                Dofinansowania
+                Dofinansowania z UE
               </CustomNavLink>
               <CustomNavLink to="/media" onClick={closeMenu}>
                 Dla mediów

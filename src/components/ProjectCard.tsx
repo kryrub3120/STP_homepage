@@ -1,13 +1,13 @@
 import React from 'react';
-import { ProjectInfo } from './ProjectInfoModal';
+import { Link } from 'react-router-dom';
+import { ProjectInfo } from '../data/fundingProjects';
 import { Target, FileText, Users, Trophy, CheckCircle, Clock, Brain } from 'lucide-react';
 
 interface ProjectCardProps {
   project: ProjectInfo;
-  onInfoClick: () => void;
 }
 
-export function ProjectCard({ project, onInfoClick }: ProjectCardProps) {
+export function ProjectCard({ project }: ProjectCardProps) {
   // Wybór ikony statusu projektu
   const StatusIcon = project.status === 'current' ? Clock : CheckCircle;
   const statusColor = project.status === 'current' ? 'text-primary' : 'text-green-500';
@@ -56,15 +56,15 @@ export function ProjectCard({ project, onInfoClick }: ProjectCardProps) {
           })}
         </div>
 
-        <button
-          onClick={onInfoClick}
+        <Link
+          to={`/finansowanie/${project.id}`}
           className="w-full py-3 px-4 bg-primary text-white rounded-lg
                    hover:bg-primary/90 transition-transform hover:scale-[1.02]
                    shadow-md hover:shadow-primary/20 font-medium flex items-center justify-center gap-2"
         >
           <FileText className="w-5 h-5" />
           Informacje o projekcie
-        </button>
+        </Link>
       </div>
     </div>
   );

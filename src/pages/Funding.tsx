@@ -1,21 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ProjectCard } from '../components/ProjectCard';
-import { ProjectInfoModal } from '../components/ProjectInfoModal';
 import { fundingProjects } from '../data/fundingProjects';
 
 export function Funding() {
-  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
-  
-  const openProjectInfo = (projectId: string) => {
-    setSelectedProjectId(projectId);
-  };
-  
-  const closeProjectInfo = () => {
-    setSelectedProjectId(null);
-  };
-  
-  // Znajdź wybrany projekt, jeśli jakiś jest wybrany
-  const selectedProject = fundingProjects.find(project => project.id === selectedProjectId);
   return (
     <div className="pt-16 min-h-screen bg-background">
       {/* Header Section */}
@@ -40,34 +27,13 @@ export function Funding() {
               <ProjectCard 
                 key={project.id}
                 project={project}
-                onInfoClick={() => openProjectInfo(project.id)}
               />
             ))}
       </div>
 
-          {/* Image Banner */}
-          <div className="mt-12">
-            <img 
-              src="/images/belka.png" 
-              alt="Banner" 
-              className="w-full h-auto object-cover max-w-full mx-auto rounded-lg shadow-lg"
-              style={{
-                maxHeight: '120px',
-                objectFit: 'cover',
-                objectPosition: 'center'
-              }}
-            />
-          </div>
+          {/* Brak bannera na stronie głównej finansowania - usunięty na życzenie */}
         </div>
       </div>
-      
-      {/* Modal okno z informacjami o projekcie */}
-      {selectedProject && (
-        <ProjectInfoModal
-          project={selectedProject}
-          onClose={closeProjectInfo}
-        />
-      )}
     </div>
   );
 }

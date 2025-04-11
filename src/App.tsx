@@ -11,6 +11,7 @@ const About = React.lazy(() => import('./pages/About').then(module => ({ default
 const Products = React.lazy(() => import('./pages/Products').then(module => ({ default: module.Products })));
 const Team = React.lazy(() => import('./pages/Team').then(module => ({ default: module.Team })));
 const Funding = React.lazy(() => import('./pages/Funding').then(module => ({ default: module.Funding })));
+const FundingProjectDetail = React.lazy(() => import('./pages/FundingProjectDetail').then(module => ({ default: module.FundingProjectDetail })));
 const Demo = React.lazy(() => import('./pages/Demo').then(module => ({ default: module.Demo })));
 const SoccerTalentPredictor = React.lazy(() => import('./pages/SoccerTalentPredictor').then(module => ({ default: module.SoccerTalentPredictor })));
 const ConsultingAI = React.lazy(() => import('./pages/ConsultingAI').then(module => ({ default: module.ConsultingAI })));
@@ -60,6 +61,7 @@ export default function App() {
             <Route path="/produkty/optymalizacja-rekrutacji" element={<RecruitmentOptimization />} />
             <Route path="/zespol" element={<Team />} />
             <Route path="/finansowanie" element={<Funding />} />
+            <Route path="/finansowanie/:projectId" element={<FundingProjectDetail />} />
             <Route path="/demo" element={<Demo />} />
             <Route path="/polityka-prywatnosci" element={<PrivacyPolicy />} />
             <Route path="/ciasteczka" element={<CookiesPolicy />} />

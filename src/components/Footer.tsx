@@ -108,7 +108,7 @@ export function Footer() {
                   className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group"
                 >
                   <FileText className="w-4 h-4 text-primary" />
-                  Dofinansowania
+                  Dofinansowania z UE
                 </NavLink>
               </li>
             </ul>
@@ -215,6 +215,36 @@ export function Footer() {
           <p className="text-center text-gray-400 text-sm">
             © {new Date().getFullYear()} potencjaldosportu.pl. Wszelkie prawa zastrzeżone.
           </p>
+        </div>
+      </div>
+      
+      {/* EU Funding Logo */}
+      <div className="border-t border-gray-700">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col items-center">
+          <Link 
+            to="/finansowanie"
+            className="flex flex-col items-center gap-3"
+            aria-label="Dofinansowanie z Unii Europejskiej"
+          >
+            {/* Logo pionowe dla większych ekranów */}
+            <img 
+              src="/images/Logo_UE_RGB_UE_Dofinansowane_RGB-3_pionowe.png" 
+              alt="Logo Unii Europejskiej - Dofinansowane" 
+              className="hidden md:block h-32 w-auto"
+              loading="lazy"
+            />
+            
+            {/* Logo poziome dla mniejszych ekranów */}
+            <img 
+              src="/images/Logo_UE_RGB_UE_Dofinansowane_RGB-3.png" 
+              alt="Logo Unii Europejskiej - Dofinansowane" 
+              className="md:hidden h-20 w-auto"
+              loading="lazy"
+            />
+            <p className="text-center text-gray-400 text-sm mt-2">
+              Projekt dofinansowany ze środków Unii Europejskiej
+            </p>
+          </Link>
         </div>
       </div>
     </footer>

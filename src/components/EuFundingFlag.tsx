@@ -9,10 +9,19 @@ export function EuFundingFlag() {
       aria-label="Dofinansowanie z Unii Europejskiej"
       title="Dofinansowanie z Unii Europejskiej"
     >
+      {/* Logo pionowe dla ekranów >= md (768px) */}
       <img 
-        src="/images/Flag_of_Europe.svg-768x512.png" 
-        alt="Flaga Unii Europejskiej" 
-        className="h-5 w-auto transition-transform hover:scale-110" 
+        src="/images/Logo_UE_RGB_UE_Dofinansowane_RGB-3_pionowe.png" 
+        alt="Logo Unii Europejskiej - Dofinansowane" 
+        className="hidden md:block h-12 w-auto transition-transform hover:scale-105" 
+        loading="lazy"
+      />
+      
+      {/* Logo poziome dla ekranów < md (768px) */}
+      <img 
+        src="/images/Logo_UE_RGB_UE_Dofinansowane_RGB-3.png" 
+        alt="Logo Unii Europejskiej - Dofinansowane" 
+        className="md:hidden h-8 w-auto transition-transform hover:scale-105" 
         loading="lazy"
       />
     </Link>

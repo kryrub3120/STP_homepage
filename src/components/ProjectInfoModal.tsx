@@ -52,10 +52,18 @@ export function ProjectInfoModal({ project, onClose }: ProjectInfoModalProps) {
           <div>
             <h3 className="text-sm font-medium text-muted mb-3">Dofinansowanie</h3>
             <div className="flex flex-wrap gap-6 items-center">
+              {/* Logo pionowe dla większych ekranów */}
               <img 
-                src="/images/Flag_of_Europe.svg-768x512.png" 
-                alt="Flaga Unii Europejskiej" 
-                className="h-12 w-auto"
+                src="/images/Logo_UE_RGB_UE_Dofinansowane_RGB-3_pionowe.png" 
+                alt="Logo Unii Europejskiej - Dofinansowane" 
+                className="hidden md:block h-28 w-auto"
+              />
+              
+              {/* Logo poziome dla mniejszych ekranów */}
+              <img 
+                src="/images/Logo_UE_RGB_UE_Dofinansowane_RGB-3.png" 
+                alt="Logo Unii Europejskiej - Dofinansowane" 
+                className="md:hidden h-16 w-auto"
               />
               <div className="flex flex-col">
                 <span className="text-sm font-medium text-muted">Wartość projektu</span>
